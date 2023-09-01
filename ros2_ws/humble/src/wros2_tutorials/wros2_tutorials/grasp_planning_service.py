@@ -43,18 +43,18 @@ class GraspPlanner(Node):
         global pose_dict
 
         if pose_dict is not {}:
-            for name, pose in pose_dict.items():
+            for name, data in pose_dict.items():
                 t = TransformStamped()
                 t.header.stamp = self.get_clock().now().to_msg()
-                t.header.frame_id = 'object'
+                t.header.frame_id = data['parent']
                 t.child_frame_id = name
-                t.transform.translation.x = pose.position.x
-                t.transform.translation.y = pose.position.y
-                t.transform.translation.z = pose.position.z
-                t.transform.rotation.x = pose.orientation.x
-                t.transform.rotation.y = pose.orientation.y
-                t.transform.rotation.z = pose.orientation.z
-                t.transform.rotation.w = pose.orientation.w
+                t.transform.translation.x = data['pose'].position.x
+                t.transform.translation.y = data['pose'].position.y
+                t.transform.translation.z = data['pose'].position.z
+                t.transform.rotation.x = data['pose'].orientation.x
+                t.transform.rotation.y = data['pose'].orientation.y
+                t.transform.rotation.z = data['pose'].orientation.z
+                t.transform.rotation.w = data['pose'].orientation.w
 
                 self.br.sendTransform(t)
 
@@ -126,12 +126,19 @@ def plan_grasps(req, res):
         pose_b.orientation.y = q[2]
         pose_b.orientation.z = q[3]
         pose_b.orientation.w = q[0]
+        parent_frame = 'object'
         markers.markers.append(
-            gen_marker('object', 'hande_b', i, pose_b, gripper_stl_path))
-
-        pose_dict['hande_'+str(i)] = pose_b
+            gen_marker(
+                parent_frame,
+                'hande_b_'+str(i),
+                0,
+                pose_b,
+                gripper_stl_path))
+        pose_dict['hande_b_'+str(i)] = \
+            {'parent': parent_frame, 'pose': pose_b}
         g_node.update_tfs()
 
+        parent_frame = 'hande_b_'+str(i)
         pose_f1 = Pose()
         pose_f1.position.x = -0.025
         pose_f1.position.y = 0.0
@@ -142,9 +149,9 @@ def plan_grasps(req, res):
         pose_f1.orientation.w = 1.
         markers.markers.append(
             gen_marker(
-                'hande_'+str(i),
-                'hande_f1',
-                i,
+                parent_frame,
+                'hande_f1_'+str(i),
+                0,
                 pose_f1,
                 finger1_stl_path))
         pose_f2 = Pose()
@@ -157,14 +164,15 @@ def plan_grasps(req, res):
         pose_f2.orientation.w = 1.
         markers.markers.append(
             gen_marker(
-                'hande_'+str(i),
-                'hande_f2',
-                i,
+                parent_frame,
+                'hande_f2_'+str(i),
+                0,
                 pose_f2,
                 finger2_stl_path))
-
-        pose_dict['hande_f1_'+str(i)] = pose_f1
-        pose_dict['hande_f2_'+str(i)] = pose_f2
+        pose_dict['hande_f1_'+str(i)] = \
+            {'parent': parent_frame, 'pose': pose_f1}
+        pose_dict['hande_f2_'+str(i)] = \
+            {'parent': parent_frame, 'pose': pose_f2}
 
     return res
 
