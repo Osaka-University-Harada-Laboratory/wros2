@@ -60,6 +60,8 @@ RUN rm -rf /ros2_ws/src/wrs/setup.py
 WORKDIR /ros2_ws/
 RUN echo "colcon build --symlink-install --parallel-workers 1" >> ~/.bash_history
 RUN echo "ros2 service call /plan_grasp std_srvs/srv/Empty" >> ~/.bash_history
-RUN echo "ros2 launch wros2_tutorials plan_grasp_launch.py gripper_name:=robotiq140" >> ~/.bash_history
-RUN echo "ros2 launch wros2_tutorials plan_grasp_launch.py gripper_name:=robotiq85" >> ~/.bash_history
-RUN echo "ros2 launch wros2_tutorials plan_grasp_launch.py gripper_name:=robotiqhe" >> ~/.bash_history
+RUN echo "ros2 launch wros2_tutorials plan_grasp_launch.py gripper_name:='sgb30' object_mesh_path:='/ros2_ws/src/wrs/pyhiro/suction/objects/ttube.stl'" >> ~/.bash_history
+RUN echo "ros2 launch wros2_tutorials plan_grasp_launch.py gripper_name:='suction' object_mesh_path:='/ros2_ws/src/wrs/pyhiro/suction/objects/sandpart2.stl'" >> ~/.bash_history
+RUN echo "ros2 launch wros2_tutorials plan_grasp_launch.py gripper_name:='robotiq140' object_mesh_path:='/ros2_ws/src/wrs/0000_examples/objects/milkcarton.stl'" >> ~/.bash_history
+RUN echo "ros2 launch wros2_tutorials plan_grasp_launch.py gripper_name:='robotiq85' object_mesh_path:='/ros2_ws/src/wrs/0000_examples/objects/bunnysim.stl'" >> ~/.bash_history
+RUN echo "ros2 launch wros2_tutorials plan_grasp_launch.py gripper_name:='robotiqhe' object_mesh_path:='/ros2_ws/src/wrs/0000_examples/objects/tubebig.stl'" >> ~/.bash_history

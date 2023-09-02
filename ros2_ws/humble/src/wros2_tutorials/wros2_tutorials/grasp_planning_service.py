@@ -1,6 +1,7 @@
-import os
+
 import math
 import numpy as np
+from panda3d.core import *
 from transforms3d.quaternions import mat2quat
 
 import rclpy
@@ -16,28 +17,37 @@ import modeling.collision_model as cm
 import visualization.panda.world as wd
 import grasping.planning.antipodal as gpa
 
+import pyhiro.freesuc as fs
+import pyhiro.pandactrl as pc
+import pyhiro.pandageom as pg
+
 
 class GraspPlanner(Node):
 
     def __init__(self):
         super().__init__('grasp_planning_server')
-        self.br = StaticTransformBroadcaster(self)
-        self.base = wd.World(cam_pos=[1, 1, 1], lookat_pos=[0, 0, 0])
-        self.base.taskMgr.step()
 
         self.declare_parameter('gripper_name', 'robotiqhe')
         gripper_name = self.get_parameter('gripper_name').value
+        if gripper_name in ['robotiqhe', 'robotiq85', 'robotiq140']:
+            self.base = wd.World(cam_pos=[1, 1, 1], lookat_pos=[0, 0, 0])
+        elif gripper_name in ['suction', 'sgb30']:
+            self.base = pc.World(camp=[500, 500, 500], lookatp=[0, 0, 0])
+        else:
+            rospy.logerr("The specified gripper is not implemented.")
+        self.base.taskMgr.step()
+
         if gripper_name == "robotiqhe":
             import robot_sim.end_effectors.gripper.robotiqhe.robotiqhe as gr
             self.gripper = gr.RobotiqHE()
-            self.body_stl_path = self.gripper.lft.lnks[0]['mesh_file']
+            self.body_mesh_path = self.gripper.lft.lnks[0]['mesh_file']
             self.fingers_dict = {
                 'gripper.lft.lnks.1': self.gripper.lft.lnks[1],
                 'gripper.rgt.lnks.1': self.gripper.rgt.lnks[1]}
         elif gripper_name == "robotiq85":
             import robot_sim.end_effectors.gripper.robotiq85.robotiq85 as gr
             self.gripper = gr.Robotiq85()
-            self.body_stl_path = self.gripper.lft_outer.lnks[0]['mesh_file']
+            self.body_mesh_path = self.gripper.lft_outer.lnks[0]['mesh_file']
             self.fingers_dict = {
                 'gripper.lft_outer.lnks.1': self.gripper.lft_outer.lnks[1],
                 'gripper.rgt_outer.lnks.1': self.gripper.rgt_outer.lnks[1],
@@ -52,7 +62,7 @@ class GraspPlanner(Node):
         elif gripper_name == "robotiq140":
             import robot_sim.end_effectors.gripper.robotiq140.robotiq140 as gr
             self.gripper = gr.Robotiq140()
-            self.body_stl_path = self.gripper.lft_outer.lnks[0]['mesh_file']
+            self.body_mesh_path = self.gripper.lft_outer.lnks[0]['mesh_file']
             self.fingers_dict = {
                 'gripper.lft_outer.lnks.1': self.gripper.lft_outer.lnks[1],
                 'gripper.rgt_outer.lnks.1': self.gripper.rgt_outer.lnks[1],
@@ -64,17 +74,24 @@ class GraspPlanner(Node):
                 'gripper.rgt_outer.lnks.4': self.gripper.rgt_outer.lnks[4],
                 'gripper.lft_inner.lnks.1': self.gripper.lft_inner.lnks[1],
                 'gripper.rgt_inner.lnks.1': self.gripper.rgt_inner.lnks[1]}
+        elif gripper_name == "suction":
+            import robot_sim.end_effectors.single_contact.suction.sandmmbs.sdmbs as gr  # noqa
+            self.gripper = gr
+            self.body_mesh_path = str(self.gripper.Sdmbs().mbs_stlpath)
+        elif gripper_name == "sgb30":
+            import robot_sim.end_effectors.single_contact.suction.sgb30.sgb30 as gr  # noqa
+            self.gripper = gr
+            self.body_mesh_path = str(self.gripper.SGB30().sgb_stlpath)
         else:
             self.get_logger().error(
                 "The specified gripper is not implemented.",
                 throttle_duration_sec=1)
-        self.pose_dict = {}
         gm.gen_frame().attach_to(self.base)
         self.base.taskMgr.step()
 
-        self.declare_parameter('object_stl_path', '')
-        self.object_stl_path = self.get_parameter('object_stl_path').value
-        self.object_tube = cm.CollisionModel(self.object_stl_path)
+        self.declare_parameter('object_mesh_path', '')
+        self.object_mesh_path = self.get_parameter('object_mesh_path').value
+        self.object_tube = cm.CollisionModel(self.object_mesh_path)
         self.object_tube.set_rgba([.9, .75, .35, .3])
         self.object_tube.attach_to(self.base)
         self.base.taskMgr.step()
@@ -88,21 +105,40 @@ class GraspPlanner(Node):
         pose.orientation.y = 0.
         pose.orientation.z = 0.
         pose.orientation.w = 1.
+        scale = [1., 1., 1.]
+        if gripper_name in ['robotiqhe', 'robotiq85', 'robotiq140']:
+            pass
+        elif gripper_name in ['suction', 'sgb30']:
+            scale = [0.001, 0.001, 0.001]
+        else:
+            rospy.logerr("The specified gripper is not implemented.")
         self.markers.markers.append(
             self.gen_marker(
                 'base_link',
                 'object',
                 0,
                 pose,
-                self.object_stl_path))
+                self.object_mesh_path,
+                scale=scale,
+                color=[1.0, 0.5, 0.5, 0.5]))
 
-        self.planning_service = self.create_service(
-            Empty, 'plan_grasp', self.plan_grasps)
+        self.pose_dict = {}
+        self.br = StaticTransformBroadcaster(self)
+        if gripper_name in ['robotiqhe', 'robotiq85', 'robotiq140']:
+            self.planning_service = self.create_service(
+                Empty, 'plan_grasp', self.plan_grasps)
+        elif gripper_name in ['suction', 'sgb30']:
+            self.planning_service = self.create_service(
+                Empty, 'plan_grasp', self.plan_contacts)
+        else:
+            rospy.logerr("The specified gripper is not implemented.")
         self.marker_pub = self.create_publisher(
             MarkerArray, 'grasp_pub', 1)
         self.timer = self.create_timer(0.1, self.update_tfs)
 
     def update_tfs(self):
+        """ Sends tfs. """
+
         if self.pose_dict is not {}:
             for name, data in self.pose_dict.items():
                 t = TransformStamped()
@@ -123,8 +159,9 @@ class GraspPlanner(Node):
             frame_name,
             name, id_int,
             pose,
-            stl_path,
-            scale=[1., 1., 1.]):
+            mesh_path,
+            scale=[1., 1., 1.],
+            color=[0.8, 0.8, 0.8, 0.8]):
         """ Generates a marker.
 
             Attributes:
@@ -132,8 +169,11 @@ class GraspPlanner(Node):
                 name (str): Unique marker name
                 id_int (int): Unique id number
                 pose (geometry_msgs/Pose): Pose of the marker
-                stl_path (str):
+                mesh_path (str): Mesh file path
+                scale (list(float)): Object scale to be displayed
+                color (list(float)): Object color to be displayed
         """
+
         marker = Marker()
         marker.header.frame_id = frame_name
         t = Clock().now()
@@ -146,17 +186,77 @@ class GraspPlanner(Node):
         marker.scale.x = float(scale[0])
         marker.scale.y = float(scale[1])
         marker.scale.z = float(scale[2])
-        marker.color.a = 1.0
-        marker.color.r = 1.0
-        marker.color.g = 1.0
-        marker.color.b = 1.0
-        marker.mesh_resource = 'file://' + stl_path
+        marker.color.a = float(color[0])
+        marker.color.r = float(color[1])
+        marker.color.g = float(color[2])
+        marker.color.b = float(color[3])
+        marker.mesh_resource = 'file://' + mesh_path
         marker.mesh_use_embedded_materials = True
 
         return marker
 
+    def plan_contacts(self, req, res):
+        """ Plans contacts. """
+
+        contact_planner = fs.Freesuc(
+            self.object_mesh_path,
+            handpkg=self.gripper,
+            torqueresist=100)
+        contact_planner.removeBadSamples(mindist=0.1)
+        contact_planner.clusterFacetSamplesRNN(reduceRadius=100)
+        pg.plotAxisSelf(self.base.render, Vec3(0, 0, 0))
+        contact_planner.removeHndcc(self.base)
+        objnp = pg.packpandanp(
+            contact_planner.objtrimesh.vertices,
+            contact_planner.objtrimesh.face_normals,
+            contact_planner.objtrimesh.faces,
+            name='')
+        objnp.setColor(.37, .37, .35, 1)
+        objnp.reparentTo(self.base.render)
+
+        self.get_logger().info(
+            f'Number of generated grasps: {len(contact_planner.sucrotmats)}')
+        contact_result = []
+        parent_frame = 'object'
+        for i, hndrot in enumerate(contact_planner.sucrotmats):
+            if i >= 1:
+                tmphand = self.gripper.newHandNM(hndcolor=[.7, .7, .7, .7])
+                centeredrot = Mat4(hndrot)
+                tmphand.setMat(centeredrot)
+                tmphand.reparentTo(self.base.render)
+                tmphand.setColor(.5, .5, .5, .3)
+                contact_pos = [tmphand.getPos()[i] / 1000 for i in range(3)]
+                mat = tmphand.getMat()
+                contact_mat = \
+                    [list([mat[i][0], mat[i][1], mat[i][2]]) for i in range(3)]
+
+                pose_b = Pose()
+                pose_b.position.x = contact_pos[0]
+                pose_b.position.y = contact_pos[1]
+                pose_b.position.z = contact_pos[2]
+                q = mat2quat(np.array(contact_mat).T)
+                pose_b.orientation.x = q[1]
+                pose_b.orientation.y = q[2]
+                pose_b.orientation.z = q[3]
+                pose_b.orientation.w = q[0]
+                self.markers.markers.append(
+                    self.gen_marker(
+                        parent_frame,
+                        'body_'+str(i),
+                        0,
+                        pose_b,
+                        self.body_mesh_path,
+                        scale=[0.001, 0.001, 0.001],
+                        color=[0.2, 0.8, 0.8, 0.8]))
+                self.pose_dict['body_'+str(i)] = \
+                    {'parent': parent_frame, 'pose': pose_b}
+                self.update_tfs()
+
+        return res
+
     def plan_grasps(self, req, res):
         """ Plans grasps. """
+
         grasp_info_list = gpa.plan_grasps(
             self.gripper,
             self.object_tube,
@@ -191,7 +291,7 @@ class GraspPlanner(Node):
                     'hande_b_'+str(i),
                     0,
                     pose_b,
-                    self.body_stl_path))
+                    self.body_mesh_path))
             self.pose_dict['hande_b_'+str(i)] = \
                 {'parent': parent_frame, 'pose': pose_b}
             self.update_tfs()
