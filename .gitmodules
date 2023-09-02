@@ -1,3 +1,3 @@
 [submodule "docker/wrs"]
 	path = docker/wrs
-	url = git@github.com:wanweiwei07/wrs.git
+	url = git@github.com:takuya-ki/wrs.git

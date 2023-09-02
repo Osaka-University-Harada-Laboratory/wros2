@@ -36,14 +36,31 @@ docker compose up
 ```bash
 xhost +
 docker exec -it wros_humble_container bash
-ros2 launch wros2_tutorials plan_grasp_launch.py
-ros2 service call /plan_grasp std_srvs/srv/Empty
 ```
 
-<img src=image/plan_grasp.gif width=720>  
+## Robotiq Hand-E
+```bash
+ros2 launch wros2_tutorials plan_grasp_launch.py gripper_name:=robotiqhe
+ros2 service call /plan_grasp std_srvs/srv/Empty
+```
+<img src=image/robotiqhe.gif width=720>  
+
+## Robotiq 2F-85
+```bash
+ros2 launch wros2_tutorials plan_grasp_launch.py gripper_name:=robotiq85
+ros2 service call /plan_grasp std_srvs/srv/Empty
+```
+<img src=image/robotiq85.gif width=720>  
+
+## Robotiq 2F-140
+```bash
+ros2 launch wros2_tutorials plan_grasp_launch.py gripper_name:=robotiq140
+ros2 service call /plan_grasp std_srvs/srv/Empty
+```
+<img src=image/robotiq140.gif width=720>  
+
 
 # Contributors
-
 
 
 # Author

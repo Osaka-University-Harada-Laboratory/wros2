@@ -58,5 +58,8 @@ RUN rm -rf /ros2_ws/src/wrs/setup.py
 
 # Generate bash commands
 WORKDIR /ros2_ws/
-RUN echo "ros2 launch wros2_tutorials plan_grasp_launch.py" >> ~/.bash_history
+RUN echo "colcon build --symlink-install --parallel-workers 1" >> ~/.bash_history
 RUN echo "ros2 service call /plan_grasp std_srvs/srv/Empty" >> ~/.bash_history
+RUN echo "ros2 launch wros2_tutorials plan_grasp_launch.py gripper_name:=robotiq140" >> ~/.bash_history
+RUN echo "ros2 launch wros2_tutorials plan_grasp_launch.py gripper_name:=robotiq85" >> ~/.bash_history
+RUN echo "ros2 launch wros2_tutorials plan_grasp_launch.py gripper_name:=robotiqhe" >> ~/.bash_history
