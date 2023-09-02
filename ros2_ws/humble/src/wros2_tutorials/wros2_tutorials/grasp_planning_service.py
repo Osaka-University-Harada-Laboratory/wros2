@@ -22,10 +22,10 @@ class GraspPlanner(Node):
     def __init__(self):
         super().__init__('grasp_planning_server')
         self.br = StaticTransformBroadcaster(self)
-
         self.base = wd.World(cam_pos=[1, 1, 1], lookat_pos=[0, 0, 0])
         self.base.taskMgr.step()
-        self.declare_parameter('gripper_name', 'robotiqhe') 
+
+        self.declare_parameter('gripper_name', 'robotiqhe')
         gripper_name = self.get_parameter('gripper_name').value
         if gripper_name == "robotiqhe":
             import robot_sim.end_effectors.gripper.robotiqhe.robotiqhe as gr
@@ -71,8 +71,8 @@ class GraspPlanner(Node):
         self.pose_dict = {}
         gm.gen_frame().attach_to(self.base)
         self.base.taskMgr.step()
-    
-        self.declare_parameter('object_stl_path', '') 
+
+        self.declare_parameter('object_stl_path', '')
         self.object_stl_path = self.get_parameter('object_stl_path').value
         self.object_tube = cm.CollisionModel(self.object_stl_path)
         self.object_tube.set_rgba([.9, .75, .35, .3])
@@ -118,7 +118,13 @@ class GraspPlanner(Node):
                 t.transform.rotation.w = data['pose'].orientation.w
                 self.br.sendTransform(t)
 
-    def gen_marker(self, frame_name, name, id_int, pose, stl_path, scale=[1., 1., 1.]):
+    def gen_marker(
+            self,
+            frame_name,
+            name, id_int,
+            pose,
+            stl_path,
+            scale=[1., 1., 1.]):
         """ Generates a marker.
 
             Attributes:
@@ -159,12 +165,14 @@ class GraspPlanner(Node):
             max_samples=4,
             min_dist_between_sampled_contact_points=.016,
             contact_offset=.016)
+        self.get_logger().info(
+            f'Number of generated grasps: {len(grasp_info_list)}')
 
         for i, grasp_info in enumerate(grasp_info_list):
-            jaw_width, jaw_center_pos, jaw_center_rotmat, hnd_pos, hnd_rotmat = \
+            jaw_width, jaw_pos, jaw_rotmat, hnd_pos, hnd_rotmat = \
                 grasp_info
             self.gripper.grip_at_with_jcpose(
-                jaw_center_pos, jaw_center_rotmat, jaw_width)
+                jaw_pos, jaw_rotmat, jaw_width)
             self.gripper.gen_meshmodel().attach_to(self.base)
 
             parent_frame = 'object'
