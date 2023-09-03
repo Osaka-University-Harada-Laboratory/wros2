@@ -40,7 +40,7 @@ COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose build --no-cache --p
   xhost +
   docker exec -it wros_humble_container bash
   ```
-2. Revise the planning parameters described in `wros2_tutorials/config/planner_params.yaml`  
+2. Revise the planning parameters described in [wros2_tutorials/config/planner_params.yaml](ros2_ws/humble/src/wros2_tutorials/config/planner_params.yaml)  
 3. After revising the yaml file, it must be built
     ```bash
     colcon build --symlink-install --parallel-workers 1 && source install/setup.bash
@@ -54,7 +54,7 @@ COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose build --no-cache --p
     ```
 
 ## [Robotiq Hand-E](https://robotiq.com/products/hand-e-adaptive-robot-gripper)
-`wros2_tutorials/config/planner_params.yaml`
+[wros2_tutorials/config/planner_params.yaml](ros2_ws/humble/src/wros2_tutorials/config/planner_params.yaml) 
 ```yaml
 gripper_name: 'robotiqhe'
 object_mesh_path: '/ros2_ws/src/wrs/0000_examples/objects/tubebig.stl'
@@ -62,7 +62,7 @@ object_mesh_path: '/ros2_ws/src/wrs/0000_examples/objects/tubebig.stl'
 <img src=image/robotiqhe.gif width=720>  
 
 ## [Robotiq 2F-85](https://robotiq.com/products/2f85-140-adaptive-robot-gripper)
-`wros2_tutorials/config/planner_params.yaml`
+[wros2_tutorials/config/planner_params.yaml](ros2_ws/humble/src/wros2_tutorials/config/planner_params.yaml) 
 ```yaml
 gripper_name: 'robotiq85'
 object_mesh_path: '/ros2_ws/src/wrs/0000_examples/objects/bunnysim.stl'
@@ -70,7 +70,7 @@ object_mesh_path: '/ros2_ws/src/wrs/0000_examples/objects/bunnysim.stl'
 <img src=image/robotiq85.gif width=720>  
 
 ## [Robotiq 2F-140](https://robotiq.com/products/2f85-140-adaptive-robot-gripper)
-`wros2_tutorials/config/planner_params.yaml`
+[wros2_tutorials/config/planner_params.yaml](ros2_ws/humble/src/wros2_tutorials/config/planner_params.yaml) 
 ```yaml
 gripper_name: 'robotiq140'
 object_mesh_path: '/ros2_ws/src/wrs/0000_examples/objects/milkcarton.stl'
@@ -78,7 +78,7 @@ object_mesh_path: '/ros2_ws/src/wrs/0000_examples/objects/milkcarton.stl'
 <img src=image/robotiq140.gif width=720>  
 
 ## Suction gripper
-`wros2_tutorials/config/planner_params.yaml`
+[wros2_tutorials/config/planner_params.yaml](ros2_ws/humble/src/wros2_tutorials/config/planner_params.yaml) 
 ```yaml
 gripper_name: 'suction'
 object_mesh_path: '/ros2_ws/src/wrs/pyhiro/suction/objects/sandpart2.stl'
@@ -86,7 +86,7 @@ object_mesh_path: '/ros2_ws/src/wrs/pyhiro/suction/objects/sandpart2.stl'
 <img src=image/suction.gif width=720>  
 
 ## [CONVUM balloon hand SGB30](https://convum.co.jp/products/en/other-en/sgb/)
-`wros2_tutorials/config/planner_params.yaml`
+[wros2_tutorials/config/planner_params.yaml](ros2_ws/humble/src/wros2_tutorials/config/planner_params.yaml) 
 ```yaml
 gripper_name: 'sgb30'
 object_mesh_path: '/ros2_ws/src/wrs/pyhiro/suction/objects/ttube.stl'
