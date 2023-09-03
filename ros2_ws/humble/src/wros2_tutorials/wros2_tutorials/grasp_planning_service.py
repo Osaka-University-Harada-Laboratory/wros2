@@ -1,7 +1,7 @@
 
 import math
 import numpy as np
-from panda3d.core import *
+from panda3d.core import Vec3, Mat4
 from transforms3d.quaternions import mat2quat
 
 import rclpy
@@ -34,7 +34,9 @@ class GraspPlanner(Node):
         elif gripper_name in ['suction', 'sgb30']:
             self.base = pc.World(camp=[500, 500, 500], lookatp=[0, 0, 0])
         else:
-            rospy.logerr("The specified gripper is not implemented.")
+            self.get_logger().error(
+                "The specified gripper is not implemented.",
+                throttle_duration_sec=1)
         self.base.taskMgr.step()
 
         if gripper_name == "robotiqhe":
@@ -111,7 +113,9 @@ class GraspPlanner(Node):
         elif gripper_name in ['suction', 'sgb30']:
             scale = [0.001, 0.001, 0.001]
         else:
-            rospy.logerr("The specified gripper is not implemented.")
+            self.get_logger().error(
+                "The specified gripper is not implemented.",
+                throttle_duration_sec=1)
         self.markers.markers.append(
             self.gen_marker(
                 'base_link',
@@ -131,7 +135,9 @@ class GraspPlanner(Node):
             self.planning_service = self.create_service(
                 Empty, 'plan_grasp', self.plan_contacts)
         else:
-            rospy.logerr("The specified gripper is not implemented.")
+            self.get_logger().error(
+                "The specified gripper is not implemented.",
+                throttle_duration_sec=1)
         self.marker_pub = self.create_publisher(
             MarkerArray, 'grasp_pub', 1)
         self.timer = self.create_timer(0.1, self.update_tfs)

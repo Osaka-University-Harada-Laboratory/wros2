@@ -12,7 +12,7 @@ def generate_launch_description():
 
     object_mesh_path = LaunchConfiguration(
         'object_mesh_path',
-        default="/ros2_ws/src/wros2_tutorials/wrs/0000_examples/objects/tubebig.stl")
+        default="/ros2_ws/src/wrs/0000_examples/objects/tubebig.stl")
     gripper_name = LaunchConfiguration(
         'gripper_name',
         default="robotiqhe")
