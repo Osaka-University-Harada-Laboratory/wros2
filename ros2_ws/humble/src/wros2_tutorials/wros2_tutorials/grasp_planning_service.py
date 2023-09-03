@@ -1,5 +1,4 @@
 
-import math
 import numpy as np
 from panda3d.core import Vec3, Mat4
 from transforms3d.quaternions import mat2quat
@@ -28,25 +27,68 @@ class GraspPlanner(Node):
         super().__init__('grasp_planning_server')
 
         self.declare_parameter('gripper_name', 'robotiqhe')
-        gripper_name = self.get_parameter('gripper_name').value
+        gripper_name = self.get_parameter(
+            'gripper_name').get_parameter_value().string_value
         if gripper_name in ['robotiqhe', 'robotiq85', 'robotiq140']:
             self.base = wd.World(cam_pos=[1, 1, 1], lookat_pos=[0, 0, 0])
+
+            self.declare_parameter(
+                'antipodal.angle_between_contact_normals', 90)
+            self.angle_between_contact_normals = self.get_parameter(
+                'antipodal.angle_between_contact_normals').\
+                    get_parameter_value().integer_value
+            self.declare_parameter(
+                'antipodal.openning_direction', 'loc_x')
+            self.openning_direction = self.get_parameter(
+                'antipodal.openning_direction').\
+                    get_parameter_value().string_value
+            self.declare_parameter(
+                'antipodal.max_samples', 4)
+            self.max_samples = self.get_parameter(
+                'antipodal.max_samples').\
+                    get_parameter_value().integer_value
+            self.declare_parameter(
+                'antipodal.min_dist_between_sampled_contact_points', .016)
+            self.min_dist_between_sampled_contact_points = self.get_parameter(
+                'antipodal.min_dist_between_sampled_contact_points').\
+                    get_parameter_value().double_value
+            self.declare_parameter(
+                'antipodal.contact_offset', .016)
+            self.contact_offset = self.get_parameter(
+                'antipodal.contact_offset').\
+                    get_parameter_value().double_value
         elif gripper_name in ['suction', 'sgb30']:
             self.base = pc.World(camp=[500, 500, 500], lookatp=[0, 0, 0])
+
+            self.declare_parameter(
+                'contact.torque_resistance', 100)
+            self.torque_resistance = self.get_parameter(
+                'contact.torque_resistance').\
+                    get_parameter_value().integer_value
+            self.declare_parameter(
+                'contact.min_distance', .1)
+            self.min_distance = self.get_parameter(
+                'contact.min_distance').\
+                    get_parameter_value().double_value
+            self.declare_parameter(
+                'contact.reduce_radius', 100)
+            self.reduce_radius = self.get_parameter(
+                'contact.reduce_radius').\
+                    get_parameter_value().integer_value
         else:
             self.get_logger().error(
                 "The specified gripper is not implemented.",
                 throttle_duration_sec=1)
         self.base.taskMgr.step()
 
-        if gripper_name == "robotiqhe":
+        if gripper_name == 'robotiqhe':
             import robot_sim.end_effectors.gripper.robotiqhe.robotiqhe as gr
             self.gripper = gr.RobotiqHE()
             self.body_mesh_path = self.gripper.lft.lnks[0]['mesh_file']
             self.fingers_dict = {
                 'gripper.lft.lnks.1': self.gripper.lft.lnks[1],
                 'gripper.rgt.lnks.1': self.gripper.rgt.lnks[1]}
-        elif gripper_name == "robotiq85":
+        elif gripper_name == 'robotiq85':
             import robot_sim.end_effectors.gripper.robotiq85.robotiq85 as gr
             self.gripper = gr.Robotiq85()
             self.body_mesh_path = self.gripper.lft_outer.lnks[0]['mesh_file']
@@ -61,7 +103,7 @@ class GraspPlanner(Node):
                 'gripper.rgt_outer.lnks.4': self.gripper.rgt_outer.lnks[4],
                 'gripper.lft_inner.lnks.1': self.gripper.lft_inner.lnks[1],
                 'gripper.rgt_inner.lnks.1': self.gripper.rgt_inner.lnks[1]}
-        elif gripper_name == "robotiq140":
+        elif gripper_name == 'robotiq140':
             import robot_sim.end_effectors.gripper.robotiq140.robotiq140 as gr
             self.gripper = gr.Robotiq140()
             self.body_mesh_path = self.gripper.lft_outer.lnks[0]['mesh_file']
@@ -76,11 +118,11 @@ class GraspPlanner(Node):
                 'gripper.rgt_outer.lnks.4': self.gripper.rgt_outer.lnks[4],
                 'gripper.lft_inner.lnks.1': self.gripper.lft_inner.lnks[1],
                 'gripper.rgt_inner.lnks.1': self.gripper.rgt_inner.lnks[1]}
-        elif gripper_name == "suction":
+        elif gripper_name == 'suction':
             import robot_sim.end_effectors.single_contact.suction.sandmmbs.sdmbs as gr  # noqa
             self.gripper = gr
             self.body_mesh_path = str(self.gripper.Sdmbs().mbs_stlpath)
-        elif gripper_name == "sgb30":
+        elif gripper_name == 'sgb30':
             import robot_sim.end_effectors.single_contact.suction.sgb30.sgb30 as gr  # noqa
             self.gripper = gr
             self.body_mesh_path = str(self.gripper.SGB30().sgb_stlpath)
@@ -91,8 +133,11 @@ class GraspPlanner(Node):
         gm.gen_frame().attach_to(self.base)
         self.base.taskMgr.step()
 
-        self.declare_parameter('object_mesh_path', '')
-        self.object_mesh_path = self.get_parameter('object_mesh_path').value
+        self.declare_parameter(
+            'object_mesh_path',
+            '/ros2_ws/src/wrs/0000_examples/objects/tubebig.stl')
+        self.object_mesh_path = self.get_parameter(
+            'object_mesh_path').get_parameter_value().string_value
         self.object_tube = cm.CollisionModel(self.object_mesh_path)
         self.object_tube.set_rgba([.9, .75, .35, .3])
         self.object_tube.attach_to(self.base)
@@ -207,9 +252,11 @@ class GraspPlanner(Node):
         contact_planner = fs.Freesuc(
             self.object_mesh_path,
             handpkg=self.gripper,
-            torqueresist=100)
-        contact_planner.removeBadSamples(mindist=0.1)
-        contact_planner.clusterFacetSamplesRNN(reduceRadius=100)
+            torqueresist=self.torque_resistance)
+        contact_planner.removeBadSamples(
+            mindist=self.min_distance)
+        contact_planner.clusterFacetSamplesRNN(
+            reduceRadius=self.reduce_radius)
         pg.plotAxisSelf(self.base.render, Vec3(0, 0, 0))
         contact_planner.removeHndcc(self.base)
         objnp = pg.packpandanp(
@@ -219,9 +266,9 @@ class GraspPlanner(Node):
             name='')
         objnp.setColor(.37, .37, .35, 1)
         objnp.reparentTo(self.base.render)
-
         self.get_logger().info(
             f'Number of generated grasps: {len(contact_planner.sucrotmats)}')
+
         contact_result = []
         parent_frame = 'object'
         for i, hndrot in enumerate(contact_planner.sucrotmats):
@@ -266,11 +313,16 @@ class GraspPlanner(Node):
         grasp_info_list = gpa.plan_grasps(
             self.gripper,
             self.object_tube,
-            angle_between_contact_normals=math.radians(90),
-            openning_direction='loc_x',
-            max_samples=4,
-            min_dist_between_sampled_contact_points=.016,
-            contact_offset=.016)
+            angle_between_contact_normals=\
+                np.radians(self.angle_between_contact_normals),
+            openning_direction=\
+                self.openning_direction,
+            max_samples=\
+                self.max_samples,
+            min_dist_between_sampled_contact_points=\
+                self.min_dist_between_sampled_contact_points,
+            contact_offset=\
+                self.contact_offset)
         self.get_logger().info(
             f'Number of generated grasps: {len(grasp_info_list)}')
 

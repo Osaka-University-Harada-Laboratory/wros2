@@ -30,47 +30,66 @@ COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose build --no-cache --p
 ```
 
 # Usage
-```bash
-docker compose up
-```
-```bash
-xhost +
-docker exec -it wros_humble_container bash
-```
+1. Make and execute the docker environment
+- Run the following command in one terminal
+  ```bash
+  docker compose up
+  ```
+- Run theese commands in another terminal
+  ```bash
+  xhost +
+  docker exec -it wros_humble_container bash
+  ```
+2. Revise the planning parameters described in `wros2_tutorials/config/planner_params.yaml`  
+3. After revising the yaml file, it must be built
+    ```bash
+    colcon build --symlink-install --parallel-workers 1 && source install/setup.bash
+    ```
+4. Execute commands in the docker container  
+    ```bash
+    byobu
+    ros2 launch wros2_tutorials plan_grasp_launch.py
+    # create new window by clicking F2 key
+    ros2 service call /plan_grasp std_srvs/srv/Empty
+    ```
 
 ## [Robotiq Hand-E](https://robotiq.com/products/hand-e-adaptive-robot-gripper)
-```bash
-ros2 launch wros2_tutorials plan_grasp_launch.py gripper_name:="robotiqhe" object_mesh_path:="/ros2_ws/src/wrs/0000_examples/objects/tubebig.stl"
-ros2 service call /plan_grasp std_srvs/srv/Empty
+`wros2_tutorials/config/planner_params.yaml`
+```yaml
+gripper_name: 'robotiqhe'
+object_mesh_path: '/ros2_ws/src/wrs/0000_examples/objects/tubebig.stl'
 ```
 <img src=image/robotiqhe.gif width=720>  
 
 ## [Robotiq 2F-85](https://robotiq.com/products/2f85-140-adaptive-robot-gripper)
-```bash
-ros2 launch wros2_tutorials plan_grasp_launch.py gripper_name:="robotiq85" object_mesh_path:="/ros2_ws/src/wrs/0000_examples/objects/bunnysim.stl"
-ros2 service call /plan_grasp std_srvs/srv/Empty
+`wros2_tutorials/config/planner_params.yaml`
+```yaml
+gripper_name: 'robotiq85'
+object_mesh_path: '/ros2_ws/src/wrs/0000_examples/objects/bunnysim.stl'
 ```
 <img src=image/robotiq85.gif width=720>  
 
 ## [Robotiq 2F-140](https://robotiq.com/products/2f85-140-adaptive-robot-gripper)
-
-```bash
-ros2 launch wros2_tutorials plan_grasp_launch.py gripper_name:="robotiq140" object_mesh_path:="/ros2_ws/src/wrs/0000_examples/objects/milkcarton.stl"
-ros2 service call /plan_grasp std_srvs/srv/Empty
+`wros2_tutorials/config/planner_params.yaml`
+```yaml
+gripper_name: 'robotiq140'
+object_mesh_path: '/ros2_ws/src/wrs/0000_examples/objects/milkcarton.stl'
 ```
 <img src=image/robotiq140.gif width=720>  
 
 ## Suction gripper
-```bash
-ros2 launch wros2_tutorials plan_grasp_launch.py gripper_name:="suction" object_mesh_path:="/ros2_ws/src/wrs/pyhiro/suction/objects/sandpart2.stl"
-ros2 service call /plan_grasp std_srvs/srv/Empty
+`wros2_tutorials/config/planner_params.yaml`
+```yaml
+gripper_name: 'suction'
+object_mesh_path: '/ros2_ws/src/wrs/pyhiro/suction/objects/sandpart2.stl'
 ```
 <img src=image/suction.gif width=720>  
 
 ## [CONVUM balloon hand SGB30](https://convum.co.jp/products/en/other-en/sgb/)
-```bash
-ros2 launch wros2_tutorials plan_grasp_launch.py gripper_name:="sgb30" object_mesh_path:="/ros2_ws/src/wrs/pyhiro/suction/objects/ttube.stl"
-ros2 service call /plan_grasp std_srvs/srv/Empty
+`wros2_tutorials/config/planner_params.yaml`
+```yaml
+gripper_name: 'sgb30'
+object_mesh_path: '/ros2_ws/src/wrs/pyhiro/suction/objects/ttube.stl'
 ```
 <img src=image/sgb30.gif width=720>  
 
