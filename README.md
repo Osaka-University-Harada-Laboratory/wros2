@@ -35,13 +35,13 @@ COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose build --no-cache --p
   ```bash
   docker compose up
   ```
-- Run theese commands in another terminal
+- Run these commands in another terminal
   ```bash
   xhost +
   docker exec -it wros_humble_container bash
   ```
 2. Revise the planning parameters described in [wros2_tutorials/config/planner_params.yaml](ros2_ws/humble/src/wros2_tutorials/config/planner_params.yaml)  
-3. After revising the yaml file, it must be built
+3. Build the source codes with the revised yaml file
     ```bash
     colcon build --symlink-install --parallel-workers 1 && source install/setup.bash
     ```
