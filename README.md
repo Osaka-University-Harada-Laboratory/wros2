@@ -11,7 +11,7 @@ ROS2 node examples with WRS.
 # Features
 
 - Docker environment for ROS Humble Hawksbill packages
-- ROS2 node examples with [grasp planners (Wan et al., IEEE TRO 2021)](https://ieeexplore.ieee.org/abstract/document/8206011)
+- ROS2 node examples with [grasp planners (Wan et al., IEEE TRO 2021)](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9170578)
 
 # Dependency
 
