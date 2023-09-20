@@ -1,6 +1,8 @@
 import os
 from launch_ros.actions import Node
 from launch import LaunchDescription
+from launch.actions import DeclareLaunchArgument
+from launch.substitutions import LaunchConfiguration
 from launch_ros.substitutions import FindPackageShare
 from launch.substitutions import PathJoinSubstitution
 from ament_index_python.packages import get_package_share_directory
@@ -12,10 +14,13 @@ def generate_launch_description():
         [FindPackageShare('wros2_tutorials'),
          'config',
          'grasps.rviz'])
-    rosparam_config = os.path.join(
-        get_package_share_directory('wros2_tutorials'),
+    config = DeclareLaunchArgument(
         'config',
-        'planner_params.yaml')
+        default_value='planning_params_robotiqhe_example.yaml')
+    rosparam_config = PathJoinSubstitution(
+        [FindPackageShare('wros2_tutorials'),
+        'config',
+        LaunchConfiguration('config')])
 
     return LaunchDescription([
         Node(
