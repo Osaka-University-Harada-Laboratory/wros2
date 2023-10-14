@@ -7,8 +7,4 @@ grasp_planning_server:
       openning_direction: 'loc_x' 
       max_samples: 4
       min_dist_between_sampled_contact_points: .016
-      contact_offset: .016 
-    contact:
-      torque_resistance: 100
-      min_distance: .1
-      reduce_radius: 100
+      contact_offset: .016

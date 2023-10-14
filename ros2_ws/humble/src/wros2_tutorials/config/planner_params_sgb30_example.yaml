@@ -2,12 +2,6 @@ grasp_planning_server:
   ros__parameters:
     object_mesh_path: '/ros2_ws/src/wrs/pyhiro/suction/objects/ttube.stl'
     gripper_name: 'sgb30'
-    antipodal_grasp:
-      angle_between_contact_normals: 90
-      openning_direction: 'loc_x' 
-      max_samples: 4
-      min_dist_between_sampled_contact_points: .016
-      contact_offset: .016 
     contact:
       torque_resistance: 100
       min_distance: .1
