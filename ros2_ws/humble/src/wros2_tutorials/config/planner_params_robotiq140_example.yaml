@@ -4,7 +4,7 @@ grasp_planning_server:
     gripper_name: 'robotiq140'
     antipodal_grasp:
       angle_between_contact_normals: 90
-      openning_direction: 'loc_x' 
+      openning_direction: 'loc_y' 
       max_samples: 4
       min_dist_between_sampled_contact_points: .016
       contact_offset: .016

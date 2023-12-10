@@ -33,29 +33,29 @@ class GraspPlanner(Node):
             self.base = wd.World(cam_pos=[1, 1, 1], lookat_pos=[0, 0, 0])
 
             self.declare_parameter(
-                'antipodal.angle_between_contact_normals', 90)
+                'antipodal_grasp.angle_between_contact_normals', 90)
             self.angle_between_contact_normals = self.get_parameter(
-                'antipodal.angle_between_contact_normals').\
+                'antipodal_grasp.angle_between_contact_normals').\
                     get_parameter_value().integer_value
             self.declare_parameter(
-                'antipodal.openning_direction', 'loc_x')
+                'antipodal_grasp.openning_direction', 'loc_x')
             self.openning_direction = self.get_parameter(
-                'antipodal.openning_direction').\
+                'antipodal_grasp.openning_direction').\
                     get_parameter_value().string_value
             self.declare_parameter(
-                'antipodal.max_samples', 4)
+                'antipodal_grasp.max_samples', 4)
             self.max_samples = self.get_parameter(
-                'antipodal.max_samples').\
+                'antipodal_grasp.max_samples').\
                     get_parameter_value().integer_value
             self.declare_parameter(
-                'antipodal.min_dist_between_sampled_contact_points', .016)
+                'antipodal_grasp.min_dist_between_sampled_contact_points', .016)
             self.min_dist_between_sampled_contact_points = self.get_parameter(
-                'antipodal.min_dist_between_sampled_contact_points').\
+                'antipodal_grasp.min_dist_between_sampled_contact_points').\
                     get_parameter_value().double_value
             self.declare_parameter(
-                'antipodal.contact_offset', .016)
+                'antipodal_grasp.contact_offset', .016)
             self.contact_offset = self.get_parameter(
-                'antipodal.contact_offset').\
+                'antipodal_grasp.contact_offset').\
                     get_parameter_value().double_value
         elif gripper_name in ['suction', 'sgb30']:
             self.base = pc.World(camp=[500, 500, 500], lookatp=[0, 0, 0])
@@ -310,6 +310,8 @@ class GraspPlanner(Node):
     def plan_grasps(self, req, res):
         """ Plans grasps. """
 
+        self.get_logger().info(
+            f'self.openning_direction: {self.openning_direction}')
         grasp_info_list = gpa.plan_grasps(
             self.gripper,
             self.object_tube,

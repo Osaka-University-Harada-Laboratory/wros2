@@ -53,7 +53,7 @@ COPY MANIFEST.in /ros2_ws/src/wrs/
 COPY requirements.txt /ros2_ws/src/wrs/
 WORKDIR /ros2_ws/src/wrs/
 RUN pip3 install --upgrade setuptools pip
-RUN pip3 install .
+RUN pip3 install --ignore-installed .
 RUN rm -rf /ros2_ws/src/wrs/setup.py
 
 # Generate bash commands
