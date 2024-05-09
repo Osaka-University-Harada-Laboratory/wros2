@@ -23,9 +23,7 @@ ROS2 node examples with WRS.
 
 # Installation
 ```bash
-git clone git@github.com:Osaka-University-Harada-Laboratory/wros2.git --recursive --depth 1
-sudo apt install byobu -y
-cd wros2
+git clone git@github.com:Osaka-University-Harada-Laboratory/wros2.git --recursive --depth 1 && cs wros2
 COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose build --no-cache --parallel 
 ```
 
@@ -56,40 +54,56 @@ COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose build --no-cache --p
 ## [Robotiq Hand-E](https://robotiq.com/products/hand-e-adaptive-robot-gripper)
 Please refer to [wros2_tutorials/config/planner_params_robotiqhe_example.yaml](ros2_ws/humble/src/wros2_tutorials/config/planner_params_robotiqhe_example.yaml).
 ```bash
+# byobu
 ros2 launch wros2_tutorials plan_grasp_launch.py config:=planner_params_robotiqhe_example.yaml
+# F2
+# ros2 service call /plan_grasp std_srvs/srv/Empty
 ```  
 <img src=image/robotiqhe.gif width=720>  
 
 ## [Robotiq 2F-85](https://robotiq.com/products/2f85-140-adaptive-robot-gripper)
 Please refer to [wros2_tutorials/config/planner_params_robotiq85_example.yaml](ros2_ws/humble/src/wros2_tutorials/config/planner_params_robotiq85_example.yaml).
 ```bash
+# byobu
 ros2 launch wros2_tutorials plan_grasp_launch.py config:=planner_params_robotiq85_example.yaml
+# F2
+# ros2 service call /plan_grasp std_srvs/srv/Empty
 ```  
 <img src=image/robotiq85.gif width=720>  
 
 ## [Robotiq 2F-140](https://robotiq.com/products/2f85-140-adaptive-robot-gripper)
 Please refer to [wros2_tutorials/config/planner_params_robotiq140_example.yaml](ros2_ws/humble/src/wros2_tutorials/config/planner_params_robotiq140_example.yaml).
 ```bash
+# byobu
 ros2 launch wros2_tutorials plan_grasp_launch.py config:=planner_params_robotiq140_example.yaml
+# F2
+# ros2 service call /plan_grasp std_srvs/srv/Empty
 ```  
 <img src=image/robotiq140.gif width=720>  
 
 ## Suction gripper
 Please refer to [wros2_tutorials/config/planner_params_suction_example.yaml](ros2_ws/humble/src/wros2_tutorials/config/planner_params_suction_example.yaml).
 ```bash
+# byobu
 ros2 launch wros2_tutorials plan_grasp_launch.py config:=planner_params_suction_example.yaml
+# F2
+# ros2 service call /plan_grasp std_srvs/srv/Empty
 ```  
 <img src=image/suction.gif width=720>  
 
 ## [CONVUM balloon hand SGB30](https://convum.co.jp/products/en/other-en/sgb/)
 Please refer to [wros2_tutorials/config/planner_params_sgb30_example.yaml](ros2_ws/humble/src/wros2_tutorials/config/planner_params_sgb30_example.yaml).
 ```bash
+# byobu
 ros2 launch wros2_tutorials plan_grasp_launch.py config:=planner_params_sgb30_example.yaml
+# F2
+# ros2 service call /plan_grasp std_srvs/srv/Empty
 ```  
 <img src=image/sgb30.gif width=720>  
 
 # Contributors
 
+We are looking for collaborators who can develop and/or manage this repository with us!
 
 # Author
 
@@ -97,3 +111,7 @@ ros2 launch wros2_tutorials plan_grasp_launch.py config:=planner_params_sgb30_ex
 [Weiwei Wan](https://wanweiwei07.github.io/)  
 [Keisuke Koyama](https://kk-hs-sa.website/)  
 [Kensuke Harada](https://www.roboticmanipulation.org/members2/kensuke-harada/)  
+
+## License
+
+This software is released under the MIT License, see [LICENSE](./LICENSE).
