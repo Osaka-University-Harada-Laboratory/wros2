@@ -47,8 +47,9 @@ COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose build --no-cache --p
     ```bash
     byobu
     ros2 launch wros2_tutorials plan_grasp_launch.py config:=XXX.yaml
-    # create new window by clicking F2 key
+    # F2 to create a new window
     ros2 service call /plan_grasp std_srvs/srv/Empty
+    # Ctrl + F6 to close the selected window
     ```
 
 ## [Robotiq Hand-E](https://robotiq.com/products/hand-e-adaptive-robot-gripper)

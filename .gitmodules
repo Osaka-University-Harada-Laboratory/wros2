@@ -1,3 +1,4 @@
 [submodule "docker/wrs"]
 	path = docker/wrs
 	url = git@github.com:takuya-ki/wrs.git
+	ignore = dirty
