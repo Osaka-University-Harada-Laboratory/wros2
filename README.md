@@ -23,27 +23,27 @@ ROS2 node examples with WRS.
 
 # Installation
 ```bash
-git clone git@github.com:Osaka-University-Harada-Laboratory/wros2.git --recursive --depth 1 && cs wros2
+git clone git@github.com:Osaka-University-Harada-Laboratory/wros2.git --recursive --depth 1 && cd wros2
 COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker compose build --no-cache --parallel 
 ```
 
 # Usage
-1. Make and execute the docker environment
-- Run the following command in one terminal
+1. Build and run the docker environment
+- Create and start docker containers in the initially opened terminal
   ```bash
   docker compose up
   ```
-- Run these commands in another terminal
+- Execute the container in another terminal
   ```bash
   xhost +
   docker exec -it wros_humble_container bash
   ```
-2. Revise the planning parameters described in wros2_tutorials/config/XXX.yaml 
-3. Build the source codes with the revised yaml file
+2. Change planning parameters in wros2_tutorials/config/XXX.yaml 
+3. Build program files with the revised yaml
     ```bash
     colcon build --symlink-install --parallel-workers 1 && source install/setup.bash
     ```
-4. Execute commands in the docker container  
+4. Run a planning process in the container  
     ```bash
     byobu
     ros2 launch wros2_tutorials plan_grasp_launch.py config:=XXX.yaml
@@ -104,7 +104,7 @@ ros2 launch wros2_tutorials plan_grasp_launch.py config:=planner_params_sgb30_ex
 
 # Contributors
 
-We are looking for collaborators who can develop and/or manage this repository with us!
+We always welcome collaborators!
 
 # Author
 
