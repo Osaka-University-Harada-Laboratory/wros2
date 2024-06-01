@@ -42,7 +42,7 @@ git clone git@github.com:Osaka-University-Harada-Laboratory/wros2.git --recursiv
     colcon build --symlink-install --parallel-workers 1 && source install/setup.bash
     ```
 4. Run a planning process in the container
-- Use bash to easily command several commands  
+- Use byobu to easily command several commands  
     ```bash
     byobu
     ```
