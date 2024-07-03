@@ -1,10 +1,10 @@
 # wros2
 
-ROS2 node examples with WRS.
-
 [![support level: community](https://img.shields.io/badge/support%20level-community-lightgray.svg)](https://rosindustrial.org/news/2016/10/7/better-supporting-a-growing-ros-industrial-software-platform)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
 ![repo size](https://img.shields.io/github/repo-size/Osaka-University-Harada-Laboratory/wros2)
+
+ROS2 node examples with WRS.
 
 - ROS Humble Hawksbill node examples with robot motion planners implemented in [WRS](https://github.com/wanweiwei07/wrs).
 
