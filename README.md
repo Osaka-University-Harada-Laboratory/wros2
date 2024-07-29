@@ -13,13 +13,14 @@ ROS2 node examples with WRS.
 - Docker environment for ROS Humble Hawksbill packages
 - ROS2 node examples with [grasp planners (Wan et al., IEEE TRO 2021)](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9170578)
 
-# Dependency
+# Dependency (tested as a host machine)
 
 - [Ubuntu 22.04 PC](https://ubuntu.com/certified/laptops?q=&limit=20&vendor=Dell&vendor=Lenovo&vendor=HP&release=22.04+LTS)
-  - [ROS2 Humble Hawksbill](https://docs.ros.org/en/humble/Installation/Alternatives/Ubuntu-Development-Setup.html)
-  - docker 20.10.12
-  - docker-compose 1.29.2
-  - nvidia-docker2 2.8.0-1
+  - NVIDIA GeForce RTX 3070
+  - NVIDIA Driver 470.256.02
+  - Docker 26.1.1
+  - Docker Compose 2.27.0
+  - NVIDIA Docker 2.13.0
 
 # Installation
 ```bash
@@ -39,7 +40,7 @@ git clone git@github.com:Osaka-University-Harada-Laboratory/wros2.git --recursiv
 2. Change planning parameters in wros2_tutorials/config/XXX.yaml 
 3. Build program files with the revised yaml
     ```bash
-    colcon build --symlink-install --parallel-workers 1 && source install/setup.bash
+    cd /ros2_ws && colcon build --symlink-install --parallel-workers 1 && source install/setup.bash
     ```
 4. Run a planning process in the container
 - Use byobu to easily command several commands  
@@ -53,9 +54,9 @@ git clone git@github.com:Osaka-University-Harada-Laboratory/wros2.git --recursiv
     ros2 launch wros2_tutorials plan_grasp_launch.py config:=XXX.yaml
     ```
 - Call the planning service  
-   ```bash
-   ros2 service call /plan_grasp std_srvs/srv/Empty
-   ```
+    ```bash
+    ros2 service call /plan_grasp std_srvs/srv/Empty
+    ```
 
 ## [Robotiq Hand-E](https://robotiq.com/products/hand-e-adaptive-robot-gripper)
 Please refer to [wros2_tutorials/config/planner_params_robotiqhe_example.yaml](ros2_ws/humble/src/wros2_tutorials/config/planner_params_robotiqhe_example.yaml).
