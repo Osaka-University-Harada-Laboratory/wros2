@@ -1,43 +1,43 @@
 FROM ubuntu:22.04
 
+# setting environmental variables
+ENV DEBIAN_FRONTEND noninteractive
+
 # Timezone and Launguage
-RUN apt update \
-  && apt install -y --no-install-recommends \
-     locales \
-     software-properties-common tzdata \
-  && locale-gen en_US en_US.UTF-8 \
-  && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 \
-  && add-apt-repository universe
+RUN apt update -y && apt install -y --no-install-recommends \
+    software-properties-common \        
+    locales \
+    tzdata \
+    && locale-gen en_US en_US.UTF-8 \
+    && update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 \
+    && add-apt-repository universe
 
 ENV LANG en_US.UTF-8
 ENV TZ=Asia/Tokyo
 
-# Install ROS2
-RUN apt update && apt install -y --no-install-recommends \
-     git \
-     curl \
-     byobu \
-     gnupg2 \
-     lsb-release \
-     python3-pip \
-     python3-tk \
-     vim \
-     wget \
-     build-essential \
-     ca-certificates
+RUN apt update -y && apt install -y --no-install-recommends \
+    build-essential \
+    ca-certificates \
+    lsb-release \
+    python3-pip \
+    python3-tk \
+    gnupg2 \
+    byobu \
+    curl \
+    wget \
+    git \
+    vim \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg \
-  && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/ros2.list > /dev/null
+    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/ros2.list > /dev/null
 
-RUN apt upgrade -y \
-  && DEBIAN_FRONTEND=noninteractive \
-  && apt update \
-  && apt install -y --no-install-recommends \
-     ros-humble-desktop \
-     ros-humble-tf2-tools \
-     ros-humble-tf-transformations \
-     python3-colcon-common-extensions \
-  && rm -rf /var/lib/apt/lists/*
+RUN apt upgrade -y && apt update -y && apt install -y --no-install-recommends \
+    ros-humble-desktop \
+    ros-humble-tf2-tools \
+    ros-humble-tf-transformations \
+    python3-colcon-common-extensions \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc 
 RUN echo "source /usr/share/colcon_cd/function/colcon_cd.sh" >> ~/.bashrc
