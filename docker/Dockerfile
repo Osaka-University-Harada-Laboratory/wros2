@@ -52,7 +52,7 @@ COPY setup.py /ros2_ws/src/wrs/
 COPY MANIFEST.in /ros2_ws/src/wrs/
 COPY requirements.txt /ros2_ws/src/wrs/
 WORKDIR /ros2_ws/src/wrs/
-RUN pip3 install --upgrade setuptools pip
+RUN pip3 install setuptools==65.5.0
 RUN pip3 install --ignore-installed .
 RUN rm -rf /ros2_ws/src/wrs/setup.py
 
@@ -63,7 +63,7 @@ RUN echo "/usr/bin/python3 /ros2_ws/src/wrs/robot_sim/end_effectors/single_conta
 RUN echo "/usr/bin/python3 /ros2_ws/src/wrs/robot_sim/end_effectors/gripper/robotiq140/robotiq140.py" >> ~/.bash_history
 RUN echo "/usr/bin/python3 /ros2_ws/src/wrs/robot_sim/end_effectors/gripper/robotiq85/robotiq85.py" >> ~/.bash_history
 RUN echo "/usr/bin/python3 /ros2_ws/src/wrs/robot_sim/end_effectors/gripper/robotiqhe/robotiqhe.py" >> ~/.bash_history
-RUN echo "colcon build --symlink-install --parallel-workers 1" >> ~/.bash_history
+RUN echo "colcon build --symlink-install --executor sequential" >> ~/.bash_history
 RUN echo "byobu" >> ~/.bash_history
 RUN echo "ros2 service call /plan_grasp std_srvs/srv/Empty" >> ~/.bash_history
 RUN echo "ros2 launch wros2_tutorials plan_grasp_launch.py config:=planner_params_sgb30_example.yaml" >> ~/.bash_history

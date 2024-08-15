@@ -25,4 +25,4 @@ services:
         privileged: true
         tty: true
         network_mode: host
-        command: bash -c "source /opt/ros/humble/setup.bash && colcon build --symlink-install --parallel-workers 1 && bash"
+        command: bash -c "source /opt/ros/humble/setup.bash && colcon build --symlink-install --executor sequential && bash"
