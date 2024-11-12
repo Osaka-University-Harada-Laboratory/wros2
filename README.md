@@ -58,70 +58,7 @@ git clone git@github.com:Osaka-University-Harada-Laboratory/wros2.git --recursiv
         ros2 service call /plan_grasp std_srvs/srv/Empty
         ```
 
-## [Robotiq Hand-E](https://robotiq.com/products/hand-e-adaptive-robot-gripper)
-- Please refer to [wros2_tutorials/config/planner_params_robotiqhe_example.yaml](ros2_ws/humble/src/wros2_tutorials/config/planner_params_robotiqhe_example.yaml).  
-    ```bash
-    byobu
-    ```  
-    ```bash
-    ros2 launch wros2_tutorials plan_grasp_launch.py config:=planner_params_robotiqhe_example.yaml
-    ```  
-    ```bash
-    ros2 service call /plan_grasp std_srvs/srv/Empty
-    ```  
-    <img src=image/robotiqhe.gif width=720>  
-
-## [Robotiq 2F-85](https://robotiq.com/products/2f85-140-adaptive-robot-gripper)
-- Please refer to [wros2_tutorials/config/planner_params_robotiq85_example.yaml](ros2_ws/humble/src/wros2_tutorials/config/planner_params_robotiq85_example.yaml).  
-    ```bash
-    byobu
-    ```  
-    ```bash
-    ros2 launch wros2_tutorials plan_grasp_launch.py config:=planner_params_robotiq85_example.yaml
-    ```  
-    ```bash
-    ros2 service call /plan_grasp std_srvs/srv/Empty
-    ```  
-    <img src=image/robotiq85.gif width=720>  
-
-## [Robotiq 2F-140](https://robotiq.com/products/2f85-140-adaptive-robot-gripper)
-- Please refer to [wros2_tutorials/config/planner_params_robotiq140_example.yaml](ros2_ws/humble/src/wros2_tutorials/config/planner_params_robotiq140_example.yaml).
-    ```bash
-    byobu
-    ```  
-    ```bash
-    ros2 launch wros2_tutorials plan_grasp_launch.py config:=planner_params_robotiq140_example.yaml
-    ```  
-    ```bash
-    ros2 service call /plan_grasp std_srvs/srv/Empty
-    ```  
-    <img src=image/robotiq140.gif width=720>  
-
-## Suction gripper
-- Please refer to [wros2_tutorials/config/planner_params_suction_example.yaml](ros2_ws/humble/src/wros2_tutorials/config/planner_params_suction_example.yaml).
-    ```bash
-    byobu
-    ```  
-    ```bash
-    ros2 launch wros2_tutorials plan_grasp_launch.py config:=planner_params_suction_example.yaml
-    ```  
-    ```bash
-    ros2 service call /plan_grasp std_srvs/srv/Empty
-    ```  
-    <img src=image/suction.gif width=720>  
-
-## [CONVUM balloon hand SGB30](https://convum.co.jp/products/en/other-en/sgb/)
-- Please refer to [wros2_tutorials/config/planner_params_sgb30_example.yaml](ros2_ws/humble/src/wros2_tutorials/config/planner_params_sgb30_example.yaml).
-    ```bash
-    byobu
-    ```  
-    ```bash
-    ros2 launch wros2_tutorials plan_grasp_launch.py config:=planner_params_sgb30_example.yaml
-    ```  
-    ```bash
-    ros2 service call /plan_grasp std_srvs/srv/Empty
-    ```  
-    <img src=image/sgb30.gif width=720>  
+#### Please refer to [wiki page](https://github.com/Osaka-University-Harada-Laboratory/wros2/wiki/Usage-examples) for usage examples.
 
 # Contributors
 
