@@ -1,9 +1,9 @@
 services:
-    wros_humble_ws:
+    wros2_humble_ws:
         build:
             context: "docker"
             dockerfile: "Dockerfile"
-        container_name: wros_humble_container
+        container_name: wros2_humble_container
         runtime: nvidia
         environment:
             - NVIDIA_VISIBLE_DEVICES=all

@@ -35,7 +35,7 @@ git clone git@github.com:Osaka-University-Harada-Laboratory/wros2.git --recursiv
         ```
    - Execute the container in another terminal
         ```bash
-        xhost + && docker exec -it wros_humble_container bash
+        xhost + && docker exec -it wros2_humble_container bash
         ```
 2. Change planning parameters in wros2_tutorials/config/XXX.yaml 
 3. Build program files with the revised yaml
