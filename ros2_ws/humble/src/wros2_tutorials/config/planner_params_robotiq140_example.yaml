@@ -1,9 +1,9 @@
 grasp_planning_server:
     ros__parameters:
-        object_mesh_path: '/ros2_ws/src/wrs/0000_examples/objects/milkcarton.stl'
+        object_mesh_path: '/ros2_ws/src/wros2_tutorials/meshes/milkcarton.stl'
         gripper_name: 'robotiq140'
         antipodal_grasp:
-        angle_between_contact_normals: 90
+            angle_between_contact_normals: 90
             openning_direction: 'loc_y' 
             max_samples: 4
             min_dist_between_sampled_contact_points: .016

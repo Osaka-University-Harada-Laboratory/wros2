@@ -1,6 +1,6 @@
 grasp_planning_server:
     ros__parameters:
-        object_mesh_path: '/ros2_ws/src/wrs/pyhiro/suction/objects/ttube.stl'
+        object_mesh_path: '/ros2_ws/src/wros2_tutorials/meshes/ttube.stl'
         gripper_name: 'sgb30'
         contact:
             torque_resistance: 100

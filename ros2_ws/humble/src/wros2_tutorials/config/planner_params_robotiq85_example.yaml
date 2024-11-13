@@ -1,6 +1,6 @@
 grasp_planning_server:
     ros__parameters:
-        object_mesh_path: '/ros2_ws/src/wrs/0000_examples/objects/bunnysim.stl'
+        object_mesh_path: '/ros2_ws/src/wros2_tutorials/meshes/bunnysim.stl'
         gripper_name: 'robotiq85'
         antipodal_grasp:
             angle_between_contact_normals: 90
