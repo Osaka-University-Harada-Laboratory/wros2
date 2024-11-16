@@ -35,27 +35,28 @@ class GraspPlanner(Node):
                 'antipodal_grasp.angle_between_contact_normals', 90)
             self.angle_between_contact_normals = self.get_parameter(
                 'antipodal_grasp.angle_between_contact_normals').\
-                    get_parameter_value().integer_value
+                get_parameter_value().integer_value
             self.declare_parameter(
                 'antipodal_grasp.openning_direction', 'loc_x')
             self.openning_direction = self.get_parameter(
                 'antipodal_grasp.openning_direction').\
-                    get_parameter_value().string_value
+                get_parameter_value().string_value
             self.declare_parameter(
                 'antipodal_grasp.max_samples', 4)
             self.max_samples = self.get_parameter(
                 'antipodal_grasp.max_samples').\
-                    get_parameter_value().integer_value
+                get_parameter_value().integer_value
             self.declare_parameter(
-                'antipodal_grasp.min_dist_between_sampled_contact_points', .016)
+                'antipodal_grasp.min_dist_between_sampled_contact_points',
+                .016)
             self.min_dist_between_sampled_contact_points = self.get_parameter(
                 'antipodal_grasp.min_dist_between_sampled_contact_points').\
-                    get_parameter_value().double_value
+                get_parameter_value().double_value
             self.declare_parameter(
                 'antipodal_grasp.contact_offset', .016)
             self.contact_offset = self.get_parameter(
                 'antipodal_grasp.contact_offset').\
-                    get_parameter_value().double_value
+                get_parameter_value().double_value
         else:
             self.get_logger().error(
                 "The specified gripper is not implemented.",
@@ -177,10 +178,14 @@ class GraspPlanner(Node):
         if gripper_name in ['robotiqhe', 'robotiq85', 'robotiq140']:
             if self.obstcl_mesh_path == '':
                 self.planning_service = self.create_service(
-                    Empty, 'plan_grasp', self.plan_antipodal_grasps_single_object)
+                    Empty,
+                    'plan_grasp',
+                    self.plan_antipodal_grasps_single_object)
             else:
                 self.planning_service = self.create_service(
-                    Empty, 'plan_grasp', self.plan_antipodal_grasps)
+                    Empty,
+                    'plan_grasp',
+                    self.plan_antipodal_grasps)
         else:
             self.get_logger().error(
                 "The specified gripper is not implemented.",
@@ -254,16 +259,11 @@ class GraspPlanner(Node):
         grasp_info_list = gpa.plan_grasps(
             self.gripper,
             self.grasp_target,
-            angle_between_contact_normals=\
-                np.radians(self.angle_between_contact_normals),
-            openning_direction=\
-                self.openning_direction,
-            max_samples=\
-                self.max_samples,
-            min_dist_between_sampled_contact_points=\
-                self.min_dist_between_sampled_contact_points,
-            contact_offset=\
-                self.contact_offset)
+            angle_between_contact_normals=np.radians(self.angle_between_contact_normals),
+            openning_direction=self.openning_direction,
+            max_samples=self.max_samples,
+            min_dist_between_sampled_contact_points=self.min_dist_between_sampled_contact_points,
+            contact_offset=self.contact_offset)
         self.get_logger().info(
             f'Number of generated grasps: {len(grasp_info_list)}')
 
@@ -288,11 +288,11 @@ class GraspPlanner(Node):
             self.markers.markers.append(
                 self.gen_marker(
                     parent_frame,
-                    'body_'+str(i),
+                    'body_' + str(i),
                     0,
                     pose_b,
                     self.body_mesh_path))
-            self.pose_dict['body_'+str(i)] = \
+            self.pose_dict['body_' + str(i)] = \
                 {'parent': parent_frame, 'pose': pose_b}
             self.update_tfs()
 
@@ -315,12 +315,12 @@ class GraspPlanner(Node):
                 self.markers.markers.append(
                     self.gen_marker(
                         parent_frame,
-                        k+'_'+str(i),
+                        k + '_' + str(i),
                         0,
                         pose,
                         v['mesh_file'],
                         scale))
-                self.pose_dict[k+'_'+str(i)] = \
+                self.pose_dict[k + '_' + str(i)] = \
                     {'parent': parent_frame, 'pose': pose}
 
         if self.save_results:
@@ -381,11 +381,11 @@ class GraspPlanner(Node):
             self.markers.markers.append(
                 self.gen_marker(
                     parent_frame,
-                    'body_'+str(i),
+                    'body_' + str(i),
                     0,
                     pose_b,
                     self.body_mesh_path))
-            self.pose_dict['body_'+str(i)] = \
+            self.pose_dict['body_' + str(i)] = \
                 {'parent': parent_frame, 'pose': pose_b}
             self.update_tfs()
 
@@ -408,12 +408,12 @@ class GraspPlanner(Node):
                 self.markers.markers.append(
                     self.gen_marker(
                         parent_frame,
-                        k+'_'+str(i),
+                        k + '_' + str(i),
                         0,
                         pose,
                         v['mesh_file'],
                         scale))
-                self.pose_dict[k+'_'+str(i)] = \
+                self.pose_dict[k + '_' + str(i)] = \
                     {'parent': parent_frame, 'pose': pose}
 
         if self.save_results:

@@ -14,8 +14,8 @@ def generate_launch_description():
         default_value='planning_params_robotiqhe_example.yaml')
     rosparam_config = launch.substitutions.PathJoinSubstitution(
         [launch_ros.substitutions.FindPackageShare('wros2_tutorials'),
-        'config',
-        launch.substitutions.LaunchConfiguration('config')])
+         'config',
+         launch.substitutions.LaunchConfiguration('config')])
 
     return launch.LaunchDescription([
         launch_ros.actions.Node(
