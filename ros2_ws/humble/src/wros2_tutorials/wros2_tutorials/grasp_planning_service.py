@@ -16,10 +16,6 @@ import modeling.collision_model as cm
 import visualization.panda.world as wd
 import grasping.planning.antipodal as gpa
 
-import pyhiro.freesuc as fs
-import pyhiro.pandactrl as pc
-import pyhiro.pandageom as pg
-
 
 class GraspPlanner(Node):
 
@@ -57,24 +53,6 @@ class GraspPlanner(Node):
             self.contact_offset = self.get_parameter(
                 'antipodal_grasp.contact_offset').\
                     get_parameter_value().double_value
-        elif gripper_name in ['suction', 'sgb30']:
-            self.base = pc.World(camp=[500, 500, 500], lookatp=[0, 0, 0])
-
-            self.declare_parameter(
-                'contact.torque_resistance', 100)
-            self.torque_resistance = self.get_parameter(
-                'contact.torque_resistance').\
-                    get_parameter_value().integer_value
-            self.declare_parameter(
-                'contact.min_distance', .1)
-            self.min_distance = self.get_parameter(
-                'contact.min_distance').\
-                    get_parameter_value().double_value
-            self.declare_parameter(
-                'contact.reduce_radius', 100)
-            self.reduce_radius = self.get_parameter(
-                'contact.reduce_radius').\
-                    get_parameter_value().integer_value
         else:
             self.get_logger().error(
                 "The specified gripper is not implemented.",
@@ -118,14 +96,6 @@ class GraspPlanner(Node):
                 'gripper.rgt_outer.lnks.4': self.gripper.rgt_outer.lnks[4],
                 'gripper.lft_inner.lnks.1': self.gripper.lft_inner.lnks[1],
                 'gripper.rgt_inner.lnks.1': self.gripper.rgt_inner.lnks[1]}
-        elif gripper_name == 'suction':
-            import robot_sim.end_effectors.single_contact.suction.sandmmbs.sdmbs as gr  # noqa
-            self.gripper = gr
-            self.body_mesh_path = str(self.gripper.Sdmbs().mbs_stlpath)
-        elif gripper_name == 'sgb30':
-            import robot_sim.end_effectors.single_contact.suction.sgb30.sgb30 as gr  # noqa
-            self.gripper = gr
-            self.body_mesh_path = str(self.gripper.SGB30().sgb_stlpath)
         else:
             self.get_logger().error(
                 "The specified gripper is not implemented.",
@@ -155,8 +125,6 @@ class GraspPlanner(Node):
         scale = [1., 1., 1.]
         if gripper_name in ['robotiqhe', 'robotiq85', 'robotiq140']:
             pass
-        elif gripper_name in ['suction', 'sgb30']:
-            scale = [0.001, 0.001, 0.001]
         else:
             self.get_logger().error(
                 "The specified gripper is not implemented.",
@@ -176,9 +144,6 @@ class GraspPlanner(Node):
         if gripper_name in ['robotiqhe', 'robotiq85', 'robotiq140']:
             self.planning_service = self.create_service(
                 Empty, 'plan_grasp', self.plan_grasps)
-        elif gripper_name in ['suction', 'sgb30']:
-            self.planning_service = self.create_service(
-                Empty, 'plan_grasp', self.plan_contacts)
         else:
             self.get_logger().error(
                 "The specified gripper is not implemented.",
@@ -245,67 +210,6 @@ class GraspPlanner(Node):
         marker.mesh_use_embedded_materials = True
 
         return marker
-
-    def plan_contacts(self, req, res):
-        """ Plans contacts. """
-
-        contact_planner = fs.Freesuc(
-            self.object_mesh_path,
-            handpkg=self.gripper,
-            torqueresist=self.torque_resistance)
-        contact_planner.removeBadSamples(
-            mindist=self.min_distance)
-        contact_planner.clusterFacetSamplesRNN(
-            reduceRadius=self.reduce_radius)
-        pg.plotAxisSelf(self.base.render, Vec3(0, 0, 0))
-        contact_planner.removeHndcc(self.base)
-        objnp = pg.packpandanp(
-            contact_planner.objtrimesh.vertices,
-            contact_planner.objtrimesh.face_normals,
-            contact_planner.objtrimesh.faces,
-            name='')
-        objnp.setColor(.37, .37, .35, 1)
-        objnp.reparentTo(self.base.render)
-        self.get_logger().info(
-            f'Number of generated grasps: {len(contact_planner.sucrotmats)}')
-
-        contact_result = []
-        parent_frame = 'object'
-        for i, hndrot in enumerate(contact_planner.sucrotmats):
-            if i >= 1:
-                tmphand = self.gripper.newHandNM(hndcolor=[.7, .7, .7, .7])
-                centeredrot = Mat4(hndrot)
-                tmphand.setMat(centeredrot)
-                tmphand.reparentTo(self.base.render)
-                tmphand.setColor(.5, .5, .5, .3)
-                contact_pos = [tmphand.getPos()[i] / 1000 for i in range(3)]
-                mat = tmphand.getMat()
-                contact_mat = \
-                    [list([mat[i][0], mat[i][1], mat[i][2]]) for i in range(3)]
-
-                pose_b = Pose()
-                pose_b.position.x = contact_pos[0]
-                pose_b.position.y = contact_pos[1]
-                pose_b.position.z = contact_pos[2]
-                q = mat2quat(np.array(contact_mat).T)
-                pose_b.orientation.x = q[1]
-                pose_b.orientation.y = q[2]
-                pose_b.orientation.z = q[3]
-                pose_b.orientation.w = q[0]
-                self.markers.markers.append(
-                    self.gen_marker(
-                        parent_frame,
-                        'body_'+str(i),
-                        0,
-                        pose_b,
-                        self.body_mesh_path,
-                        scale=[0.001, 0.001, 0.001],
-                        color=[0.2, 0.8, 0.8, 0.8]))
-                self.pose_dict['body_'+str(i)] = \
-                    {'parent': parent_frame, 'pose': pose_b}
-                self.update_tfs()
-
-        return res
 
     def plan_grasps(self, req, res):
         """ Plans grasps. """
