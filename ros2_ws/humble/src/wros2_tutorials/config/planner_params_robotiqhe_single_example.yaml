@@ -1,6 +1,8 @@
 grasp_planning_server:
     ros__parameters:
         object_mesh_path: '/ros2_ws/src/wros2_tutorials/meshes/tubebig.stl'
+        obstcl_mesh_path: ''
+        save_results: False
         gripper_name: 'robotiqhe'
         antipodal_grasp:
             angle_between_contact_normals: 90

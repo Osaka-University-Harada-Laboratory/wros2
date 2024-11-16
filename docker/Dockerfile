@@ -62,8 +62,11 @@ RUN echo "/usr/bin/python3 /ros2_ws/src/wrs/robot_sim/end_effectors/gripper/robo
 RUN echo "/usr/bin/python3 /ros2_ws/src/wrs/robot_sim/end_effectors/gripper/robotiq85/robotiq85.py" >> ~/.bash_history
 RUN echo "/usr/bin/python3 /ros2_ws/src/wrs/robot_sim/end_effectors/gripper/robotiqhe/robotiqhe.py" >> ~/.bash_history
 RUN echo "colcon build --symlink-install --executor sequential" >> ~/.bash_history
-RUN echo "ros2 launch wros2_tutorials plan_grasp_launch.py config:=planner_params_robotiq140_example.yaml" >> ~/.bash_history
-RUN echo "ros2 launch wros2_tutorials plan_grasp_launch.py config:=planner_params_robotiq85_example.yaml" >> ~/.bash_history
-RUN echo "ros2 launch wros2_tutorials plan_grasp_launch.py config:=planner_params_robotiqhe_example.yaml" >> ~/.bash_history
+RUN echo "ros2 launch wros2_tutorials plan_grasp_launch.py config:=planner_params_robotiq140_single_example.yaml" >> ~/.bash_history
+RUN echo "ros2 launch wros2_tutorials plan_grasp_launch.py config:=planner_params_robotiq85_single_example.yaml" >> ~/.bash_history
+RUN echo "ros2 launch wros2_tutorials plan_grasp_launch.py config:=planner_params_robotiqhe_single_example.yaml" >> ~/.bash_history
+RUN echo "ros2 launch wros2_tutorials plan_grasp_launch.py config:=planner_params_robotiq140_obstcl_example.yaml" >> ~/.bash_history
+RUN echo "ros2 launch wros2_tutorials plan_grasp_launch.py config:=planner_params_robotiq85_obstcl_example.yaml" >> ~/.bash_history
+RUN echo "ros2 launch wros2_tutorials plan_grasp_launch.py config:=planner_params_robotiqhe_obstcl_example.yaml" >> ~/.bash_history
 RUN echo "ros2 service call /plan_grasp std_srvs/srv/Empty" >> ~/.bash_history
 RUN echo "byobu" >> ~/.bash_history

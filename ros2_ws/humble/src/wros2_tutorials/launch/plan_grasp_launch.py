@@ -31,6 +31,9 @@ def generate_launch_description():
             executable='rviz2',
             name='rviz2',
             arguments=['-d', rviz_config]),
+        launch.actions.DeclareLaunchArgument(
+            'config_filename',
+            default_value='planning_params_robotiqhe_example.yaml'),
         launch_ros.actions.Node(
             package='wros2_tutorials',
             executable='grasp_planning_service',

@@ -1,3 +1,5 @@
 *__pycache__/
 *.vscode
 *.pyc
+ros2_ws/humble/src/wros2_tutorials/results/*
+!ros2_ws/humble/src/wros2_tutorials/results/.gitkeep
