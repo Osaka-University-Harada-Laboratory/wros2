@@ -5,7 +5,7 @@ Panels:
     Property Tree Widget:
       Expanded: ~
       Splitter Ratio: 0.4882352948188782
-    Tree Height: 725
+    Tree Height: 365
   - Class: rviz_common/Selection
     Name: Selection
   - Class: rviz_common/Tool Properties
@@ -49,7 +49,360 @@ Visualization Manager:
       Enabled: true
       Name: MarkerArray
       Namespaces:
+        body_0: true
+        body_1: true
+        body_10: true
+        body_11: true
+        body_12: true
+        body_13: true
+        body_14: true
+        body_15: true
+        body_16: true
+        body_17: true
+        body_18: true
+        body_19: true
+        body_2: true
+        body_20: true
+        body_21: true
+        body_22: true
+        body_23: true
+        body_24: true
+        body_25: true
+        body_26: true
+        body_27: true
+        body_28: true
+        body_29: true
+        body_3: true
+        body_30: true
+        body_31: true
+        body_4: true
+        body_5: true
+        body_6: true
+        body_7: true
+        body_8: true
+        body_9: true
+        gripper.lft_inner.lnks.1_0: true
+        gripper.lft_inner.lnks.1_1: true
+        gripper.lft_inner.lnks.1_10: true
+        gripper.lft_inner.lnks.1_11: true
+        gripper.lft_inner.lnks.1_12: true
+        gripper.lft_inner.lnks.1_13: true
+        gripper.lft_inner.lnks.1_14: true
+        gripper.lft_inner.lnks.1_15: true
+        gripper.lft_inner.lnks.1_16: true
+        gripper.lft_inner.lnks.1_17: true
+        gripper.lft_inner.lnks.1_18: true
+        gripper.lft_inner.lnks.1_19: true
+        gripper.lft_inner.lnks.1_2: true
+        gripper.lft_inner.lnks.1_20: true
+        gripper.lft_inner.lnks.1_21: true
+        gripper.lft_inner.lnks.1_22: true
+        gripper.lft_inner.lnks.1_23: true
+        gripper.lft_inner.lnks.1_24: true
+        gripper.lft_inner.lnks.1_25: true
+        gripper.lft_inner.lnks.1_26: true
+        gripper.lft_inner.lnks.1_27: true
+        gripper.lft_inner.lnks.1_28: true
+        gripper.lft_inner.lnks.1_29: true
+        gripper.lft_inner.lnks.1_3: true
+        gripper.lft_inner.lnks.1_30: true
+        gripper.lft_inner.lnks.1_31: true
+        gripper.lft_inner.lnks.1_4: true
+        gripper.lft_inner.lnks.1_5: true
+        gripper.lft_inner.lnks.1_6: true
+        gripper.lft_inner.lnks.1_7: true
+        gripper.lft_inner.lnks.1_8: true
+        gripper.lft_inner.lnks.1_9: true
+        gripper.lft_outer.lnks.1_0: true
+        gripper.lft_outer.lnks.1_1: true
+        gripper.lft_outer.lnks.1_10: true
+        gripper.lft_outer.lnks.1_11: true
+        gripper.lft_outer.lnks.1_12: true
+        gripper.lft_outer.lnks.1_13: true
+        gripper.lft_outer.lnks.1_14: true
+        gripper.lft_outer.lnks.1_15: true
+        gripper.lft_outer.lnks.1_16: true
+        gripper.lft_outer.lnks.1_17: true
+        gripper.lft_outer.lnks.1_18: true
+        gripper.lft_outer.lnks.1_19: true
+        gripper.lft_outer.lnks.1_2: true
+        gripper.lft_outer.lnks.1_20: true
+        gripper.lft_outer.lnks.1_21: true
+        gripper.lft_outer.lnks.1_22: true
+        gripper.lft_outer.lnks.1_23: true
+        gripper.lft_outer.lnks.1_24: true
+        gripper.lft_outer.lnks.1_25: true
+        gripper.lft_outer.lnks.1_26: true
+        gripper.lft_outer.lnks.1_27: true
+        gripper.lft_outer.lnks.1_28: true
+        gripper.lft_outer.lnks.1_29: true
+        gripper.lft_outer.lnks.1_3: true
+        gripper.lft_outer.lnks.1_30: true
+        gripper.lft_outer.lnks.1_31: true
+        gripper.lft_outer.lnks.1_4: true
+        gripper.lft_outer.lnks.1_5: true
+        gripper.lft_outer.lnks.1_6: true
+        gripper.lft_outer.lnks.1_7: true
+        gripper.lft_outer.lnks.1_8: true
+        gripper.lft_outer.lnks.1_9: true
+        gripper.lft_outer.lnks.2_0: true
+        gripper.lft_outer.lnks.2_1: true
+        gripper.lft_outer.lnks.2_10: true
+        gripper.lft_outer.lnks.2_11: true
+        gripper.lft_outer.lnks.2_12: true
+        gripper.lft_outer.lnks.2_13: true
+        gripper.lft_outer.lnks.2_14: true
+        gripper.lft_outer.lnks.2_15: true
+        gripper.lft_outer.lnks.2_16: true
+        gripper.lft_outer.lnks.2_17: true
+        gripper.lft_outer.lnks.2_18: true
+        gripper.lft_outer.lnks.2_19: true
+        gripper.lft_outer.lnks.2_2: true
+        gripper.lft_outer.lnks.2_20: true
+        gripper.lft_outer.lnks.2_21: true
+        gripper.lft_outer.lnks.2_22: true
+        gripper.lft_outer.lnks.2_23: true
+        gripper.lft_outer.lnks.2_24: true
+        gripper.lft_outer.lnks.2_25: true
+        gripper.lft_outer.lnks.2_26: true
+        gripper.lft_outer.lnks.2_27: true
+        gripper.lft_outer.lnks.2_28: true
+        gripper.lft_outer.lnks.2_29: true
+        gripper.lft_outer.lnks.2_3: true
+        gripper.lft_outer.lnks.2_30: true
+        gripper.lft_outer.lnks.2_31: true
+        gripper.lft_outer.lnks.2_4: true
+        gripper.lft_outer.lnks.2_5: true
+        gripper.lft_outer.lnks.2_6: true
+        gripper.lft_outer.lnks.2_7: true
+        gripper.lft_outer.lnks.2_8: true
+        gripper.lft_outer.lnks.2_9: true
+        gripper.lft_outer.lnks.3_0: true
+        gripper.lft_outer.lnks.3_1: true
+        gripper.lft_outer.lnks.3_10: true
+        gripper.lft_outer.lnks.3_11: true
+        gripper.lft_outer.lnks.3_12: true
+        gripper.lft_outer.lnks.3_13: true
+        gripper.lft_outer.lnks.3_14: true
+        gripper.lft_outer.lnks.3_15: true
+        gripper.lft_outer.lnks.3_16: true
+        gripper.lft_outer.lnks.3_17: true
+        gripper.lft_outer.lnks.3_18: true
+        gripper.lft_outer.lnks.3_19: true
+        gripper.lft_outer.lnks.3_2: true
+        gripper.lft_outer.lnks.3_20: true
+        gripper.lft_outer.lnks.3_21: true
+        gripper.lft_outer.lnks.3_22: true
+        gripper.lft_outer.lnks.3_23: true
+        gripper.lft_outer.lnks.3_24: true
+        gripper.lft_outer.lnks.3_25: true
+        gripper.lft_outer.lnks.3_26: true
+        gripper.lft_outer.lnks.3_27: true
+        gripper.lft_outer.lnks.3_28: true
+        gripper.lft_outer.lnks.3_29: true
+        gripper.lft_outer.lnks.3_3: true
+        gripper.lft_outer.lnks.3_30: true
+        gripper.lft_outer.lnks.3_31: true
+        gripper.lft_outer.lnks.3_4: true
+        gripper.lft_outer.lnks.3_5: true
+        gripper.lft_outer.lnks.3_6: true
+        gripper.lft_outer.lnks.3_7: true
+        gripper.lft_outer.lnks.3_8: true
+        gripper.lft_outer.lnks.3_9: true
+        gripper.lft_outer.lnks.4_0: true
+        gripper.lft_outer.lnks.4_1: true
+        gripper.lft_outer.lnks.4_10: true
+        gripper.lft_outer.lnks.4_11: true
+        gripper.lft_outer.lnks.4_12: true
+        gripper.lft_outer.lnks.4_13: true
+        gripper.lft_outer.lnks.4_14: true
+        gripper.lft_outer.lnks.4_15: true
+        gripper.lft_outer.lnks.4_16: true
+        gripper.lft_outer.lnks.4_17: true
+        gripper.lft_outer.lnks.4_18: true
+        gripper.lft_outer.lnks.4_19: true
+        gripper.lft_outer.lnks.4_2: true
+        gripper.lft_outer.lnks.4_20: true
+        gripper.lft_outer.lnks.4_21: true
+        gripper.lft_outer.lnks.4_22: true
+        gripper.lft_outer.lnks.4_23: true
+        gripper.lft_outer.lnks.4_24: true
+        gripper.lft_outer.lnks.4_25: true
+        gripper.lft_outer.lnks.4_26: true
+        gripper.lft_outer.lnks.4_27: true
+        gripper.lft_outer.lnks.4_28: true
+        gripper.lft_outer.lnks.4_29: true
+        gripper.lft_outer.lnks.4_3: true
+        gripper.lft_outer.lnks.4_30: true
+        gripper.lft_outer.lnks.4_31: true
+        gripper.lft_outer.lnks.4_4: true
+        gripper.lft_outer.lnks.4_5: true
+        gripper.lft_outer.lnks.4_6: true
+        gripper.lft_outer.lnks.4_7: true
+        gripper.lft_outer.lnks.4_8: true
+        gripper.lft_outer.lnks.4_9: true
+        gripper.rgt_inner.lnks.1_0: true
+        gripper.rgt_inner.lnks.1_1: true
+        gripper.rgt_inner.lnks.1_10: true
+        gripper.rgt_inner.lnks.1_11: true
+        gripper.rgt_inner.lnks.1_12: true
+        gripper.rgt_inner.lnks.1_13: true
+        gripper.rgt_inner.lnks.1_14: true
+        gripper.rgt_inner.lnks.1_15: true
+        gripper.rgt_inner.lnks.1_16: true
+        gripper.rgt_inner.lnks.1_17: true
+        gripper.rgt_inner.lnks.1_18: true
+        gripper.rgt_inner.lnks.1_19: true
+        gripper.rgt_inner.lnks.1_2: true
+        gripper.rgt_inner.lnks.1_20: true
+        gripper.rgt_inner.lnks.1_21: true
+        gripper.rgt_inner.lnks.1_22: true
+        gripper.rgt_inner.lnks.1_23: true
+        gripper.rgt_inner.lnks.1_24: true
+        gripper.rgt_inner.lnks.1_25: true
+        gripper.rgt_inner.lnks.1_26: true
+        gripper.rgt_inner.lnks.1_27: true
+        gripper.rgt_inner.lnks.1_28: true
+        gripper.rgt_inner.lnks.1_29: true
+        gripper.rgt_inner.lnks.1_3: true
+        gripper.rgt_inner.lnks.1_30: true
+        gripper.rgt_inner.lnks.1_31: true
+        gripper.rgt_inner.lnks.1_4: true
+        gripper.rgt_inner.lnks.1_5: true
+        gripper.rgt_inner.lnks.1_6: true
+        gripper.rgt_inner.lnks.1_7: true
+        gripper.rgt_inner.lnks.1_8: true
+        gripper.rgt_inner.lnks.1_9: true
+        gripper.rgt_outer.lnks.1_0: true
+        gripper.rgt_outer.lnks.1_1: true
+        gripper.rgt_outer.lnks.1_10: true
+        gripper.rgt_outer.lnks.1_11: true
+        gripper.rgt_outer.lnks.1_12: true
+        gripper.rgt_outer.lnks.1_13: true
+        gripper.rgt_outer.lnks.1_14: true
+        gripper.rgt_outer.lnks.1_15: true
+        gripper.rgt_outer.lnks.1_16: true
+        gripper.rgt_outer.lnks.1_17: true
+        gripper.rgt_outer.lnks.1_18: true
+        gripper.rgt_outer.lnks.1_19: true
+        gripper.rgt_outer.lnks.1_2: true
+        gripper.rgt_outer.lnks.1_20: true
+        gripper.rgt_outer.lnks.1_21: true
+        gripper.rgt_outer.lnks.1_22: true
+        gripper.rgt_outer.lnks.1_23: true
+        gripper.rgt_outer.lnks.1_24: true
+        gripper.rgt_outer.lnks.1_25: true
+        gripper.rgt_outer.lnks.1_26: true
+        gripper.rgt_outer.lnks.1_27: true
+        gripper.rgt_outer.lnks.1_28: true
+        gripper.rgt_outer.lnks.1_29: true
+        gripper.rgt_outer.lnks.1_3: true
+        gripper.rgt_outer.lnks.1_30: true
+        gripper.rgt_outer.lnks.1_31: true
+        gripper.rgt_outer.lnks.1_4: true
+        gripper.rgt_outer.lnks.1_5: true
+        gripper.rgt_outer.lnks.1_6: true
+        gripper.rgt_outer.lnks.1_7: true
+        gripper.rgt_outer.lnks.1_8: true
+        gripper.rgt_outer.lnks.1_9: true
+        gripper.rgt_outer.lnks.2_0: true
+        gripper.rgt_outer.lnks.2_1: true
+        gripper.rgt_outer.lnks.2_10: true
+        gripper.rgt_outer.lnks.2_11: true
+        gripper.rgt_outer.lnks.2_12: true
+        gripper.rgt_outer.lnks.2_13: true
+        gripper.rgt_outer.lnks.2_14: true
+        gripper.rgt_outer.lnks.2_15: true
+        gripper.rgt_outer.lnks.2_16: true
+        gripper.rgt_outer.lnks.2_17: true
+        gripper.rgt_outer.lnks.2_18: true
+        gripper.rgt_outer.lnks.2_19: true
+        gripper.rgt_outer.lnks.2_2: true
+        gripper.rgt_outer.lnks.2_20: true
+        gripper.rgt_outer.lnks.2_21: true
+        gripper.rgt_outer.lnks.2_22: true
+        gripper.rgt_outer.lnks.2_23: true
+        gripper.rgt_outer.lnks.2_24: true
+        gripper.rgt_outer.lnks.2_25: true
+        gripper.rgt_outer.lnks.2_26: true
+        gripper.rgt_outer.lnks.2_27: true
+        gripper.rgt_outer.lnks.2_28: true
+        gripper.rgt_outer.lnks.2_29: true
+        gripper.rgt_outer.lnks.2_3: true
+        gripper.rgt_outer.lnks.2_30: true
+        gripper.rgt_outer.lnks.2_31: true
+        gripper.rgt_outer.lnks.2_4: true
+        gripper.rgt_outer.lnks.2_5: true
+        gripper.rgt_outer.lnks.2_6: true
+        gripper.rgt_outer.lnks.2_7: true
+        gripper.rgt_outer.lnks.2_8: true
+        gripper.rgt_outer.lnks.2_9: true
+        gripper.rgt_outer.lnks.3_0: true
+        gripper.rgt_outer.lnks.3_1: true
+        gripper.rgt_outer.lnks.3_10: true
+        gripper.rgt_outer.lnks.3_11: true
+        gripper.rgt_outer.lnks.3_12: true
+        gripper.rgt_outer.lnks.3_13: true
+        gripper.rgt_outer.lnks.3_14: true
+        gripper.rgt_outer.lnks.3_15: true
+        gripper.rgt_outer.lnks.3_16: true
+        gripper.rgt_outer.lnks.3_17: true
+        gripper.rgt_outer.lnks.3_18: true
+        gripper.rgt_outer.lnks.3_19: true
+        gripper.rgt_outer.lnks.3_2: true
+        gripper.rgt_outer.lnks.3_20: true
+        gripper.rgt_outer.lnks.3_21: true
+        gripper.rgt_outer.lnks.3_22: true
+        gripper.rgt_outer.lnks.3_23: true
+        gripper.rgt_outer.lnks.3_24: true
+        gripper.rgt_outer.lnks.3_25: true
+        gripper.rgt_outer.lnks.3_26: true
+        gripper.rgt_outer.lnks.3_27: true
+        gripper.rgt_outer.lnks.3_28: true
+        gripper.rgt_outer.lnks.3_29: true
+        gripper.rgt_outer.lnks.3_3: true
+        gripper.rgt_outer.lnks.3_30: true
+        gripper.rgt_outer.lnks.3_31: true
+        gripper.rgt_outer.lnks.3_4: true
+        gripper.rgt_outer.lnks.3_5: true
+        gripper.rgt_outer.lnks.3_6: true
+        gripper.rgt_outer.lnks.3_7: true
+        gripper.rgt_outer.lnks.3_8: true
+        gripper.rgt_outer.lnks.3_9: true
+        gripper.rgt_outer.lnks.4_0: true
+        gripper.rgt_outer.lnks.4_1: true
+        gripper.rgt_outer.lnks.4_10: true
+        gripper.rgt_outer.lnks.4_11: true
+        gripper.rgt_outer.lnks.4_12: true
+        gripper.rgt_outer.lnks.4_13: true
+        gripper.rgt_outer.lnks.4_14: true
+        gripper.rgt_outer.lnks.4_15: true
+        gripper.rgt_outer.lnks.4_16: true
+        gripper.rgt_outer.lnks.4_17: true
+        gripper.rgt_outer.lnks.4_18: true
+        gripper.rgt_outer.lnks.4_19: true
+        gripper.rgt_outer.lnks.4_2: true
+        gripper.rgt_outer.lnks.4_20: true
+        gripper.rgt_outer.lnks.4_21: true
+        gripper.rgt_outer.lnks.4_22: true
+        gripper.rgt_outer.lnks.4_23: true
+        gripper.rgt_outer.lnks.4_24: true
+        gripper.rgt_outer.lnks.4_25: true
+        gripper.rgt_outer.lnks.4_26: true
+        gripper.rgt_outer.lnks.4_27: true
+        gripper.rgt_outer.lnks.4_28: true
+        gripper.rgt_outer.lnks.4_29: true
+        gripper.rgt_outer.lnks.4_3: true
+        gripper.rgt_outer.lnks.4_30: true
+        gripper.rgt_outer.lnks.4_31: true
+        gripper.rgt_outer.lnks.4_4: true
+        gripper.rgt_outer.lnks.4_5: true
+        gripper.rgt_outer.lnks.4_6: true
+        gripper.rgt_outer.lnks.4_7: true
+        gripper.rgt_outer.lnks.4_8: true
+        gripper.rgt_outer.lnks.4_9: true
         object: true
+        obstcl: true
       Topic:
         Depth: 5
         Durability Policy: Volatile
@@ -63,6 +416,710 @@ Visualization Manager:
       Frames:
         All Enabled: true
         base_link:
+          Value: true
+        body_0:
+          Value: true
+        body_1:
+          Value: true
+        body_10:
+          Value: true
+        body_11:
+          Value: true
+        body_12:
+          Value: true
+        body_13:
+          Value: true
+        body_14:
+          Value: true
+        body_15:
+          Value: true
+        body_16:
+          Value: true
+        body_17:
+          Value: true
+        body_18:
+          Value: true
+        body_19:
+          Value: true
+        body_2:
+          Value: true
+        body_20:
+          Value: true
+        body_21:
+          Value: true
+        body_22:
+          Value: true
+        body_23:
+          Value: true
+        body_24:
+          Value: true
+        body_25:
+          Value: true
+        body_26:
+          Value: true
+        body_27:
+          Value: true
+        body_28:
+          Value: true
+        body_29:
+          Value: true
+        body_3:
+          Value: true
+        body_30:
+          Value: true
+        body_31:
+          Value: true
+        body_4:
+          Value: true
+        body_5:
+          Value: true
+        body_6:
+          Value: true
+        body_7:
+          Value: true
+        body_8:
+          Value: true
+        body_9:
+          Value: true
+        gripper.lft_inner.lnks.1_0:
+          Value: true
+        gripper.lft_inner.lnks.1_1:
+          Value: true
+        gripper.lft_inner.lnks.1_10:
+          Value: true
+        gripper.lft_inner.lnks.1_11:
+          Value: true
+        gripper.lft_inner.lnks.1_12:
+          Value: true
+        gripper.lft_inner.lnks.1_13:
+          Value: true
+        gripper.lft_inner.lnks.1_14:
+          Value: true
+        gripper.lft_inner.lnks.1_15:
+          Value: true
+        gripper.lft_inner.lnks.1_16:
+          Value: true
+        gripper.lft_inner.lnks.1_17:
+          Value: true
+        gripper.lft_inner.lnks.1_18:
+          Value: true
+        gripper.lft_inner.lnks.1_19:
+          Value: true
+        gripper.lft_inner.lnks.1_2:
+          Value: true
+        gripper.lft_inner.lnks.1_20:
+          Value: true
+        gripper.lft_inner.lnks.1_21:
+          Value: true
+        gripper.lft_inner.lnks.1_22:
+          Value: true
+        gripper.lft_inner.lnks.1_23:
+          Value: true
+        gripper.lft_inner.lnks.1_24:
+          Value: true
+        gripper.lft_inner.lnks.1_25:
+          Value: true
+        gripper.lft_inner.lnks.1_26:
+          Value: true
+        gripper.lft_inner.lnks.1_27:
+          Value: true
+        gripper.lft_inner.lnks.1_28:
+          Value: true
+        gripper.lft_inner.lnks.1_29:
+          Value: true
+        gripper.lft_inner.lnks.1_3:
+          Value: true
+        gripper.lft_inner.lnks.1_30:
+          Value: true
+        gripper.lft_inner.lnks.1_31:
+          Value: true
+        gripper.lft_inner.lnks.1_4:
+          Value: true
+        gripper.lft_inner.lnks.1_5:
+          Value: true
+        gripper.lft_inner.lnks.1_6:
+          Value: true
+        gripper.lft_inner.lnks.1_7:
+          Value: true
+        gripper.lft_inner.lnks.1_8:
+          Value: true
+        gripper.lft_inner.lnks.1_9:
+          Value: true
+        gripper.lft_outer.lnks.1_0:
+          Value: true
+        gripper.lft_outer.lnks.1_1:
+          Value: true
+        gripper.lft_outer.lnks.1_10:
+          Value: true
+        gripper.lft_outer.lnks.1_11:
+          Value: true
+        gripper.lft_outer.lnks.1_12:
+          Value: true
+        gripper.lft_outer.lnks.1_13:
+          Value: true
+        gripper.lft_outer.lnks.1_14:
+          Value: true
+        gripper.lft_outer.lnks.1_15:
+          Value: true
+        gripper.lft_outer.lnks.1_16:
+          Value: true
+        gripper.lft_outer.lnks.1_17:
+          Value: true
+        gripper.lft_outer.lnks.1_18:
+          Value: true
+        gripper.lft_outer.lnks.1_19:
+          Value: true
+        gripper.lft_outer.lnks.1_2:
+          Value: true
+        gripper.lft_outer.lnks.1_20:
+          Value: true
+        gripper.lft_outer.lnks.1_21:
+          Value: true
+        gripper.lft_outer.lnks.1_22:
+          Value: true
+        gripper.lft_outer.lnks.1_23:
+          Value: true
+        gripper.lft_outer.lnks.1_24:
+          Value: true
+        gripper.lft_outer.lnks.1_25:
+          Value: true
+        gripper.lft_outer.lnks.1_26:
+          Value: true
+        gripper.lft_outer.lnks.1_27:
+          Value: true
+        gripper.lft_outer.lnks.1_28:
+          Value: true
+        gripper.lft_outer.lnks.1_29:
+          Value: true
+        gripper.lft_outer.lnks.1_3:
+          Value: true
+        gripper.lft_outer.lnks.1_30:
+          Value: true
+        gripper.lft_outer.lnks.1_31:
+          Value: true
+        gripper.lft_outer.lnks.1_4:
+          Value: true
+        gripper.lft_outer.lnks.1_5:
+          Value: true
+        gripper.lft_outer.lnks.1_6:
+          Value: true
+        gripper.lft_outer.lnks.1_7:
+          Value: true
+        gripper.lft_outer.lnks.1_8:
+          Value: true
+        gripper.lft_outer.lnks.1_9:
+          Value: true
+        gripper.lft_outer.lnks.2_0:
+          Value: true
+        gripper.lft_outer.lnks.2_1:
+          Value: true
+        gripper.lft_outer.lnks.2_10:
+          Value: true
+        gripper.lft_outer.lnks.2_11:
+          Value: true
+        gripper.lft_outer.lnks.2_12:
+          Value: true
+        gripper.lft_outer.lnks.2_13:
+          Value: true
+        gripper.lft_outer.lnks.2_14:
+          Value: true
+        gripper.lft_outer.lnks.2_15:
+          Value: true
+        gripper.lft_outer.lnks.2_16:
+          Value: true
+        gripper.lft_outer.lnks.2_17:
+          Value: true
+        gripper.lft_outer.lnks.2_18:
+          Value: true
+        gripper.lft_outer.lnks.2_19:
+          Value: true
+        gripper.lft_outer.lnks.2_2:
+          Value: true
+        gripper.lft_outer.lnks.2_20:
+          Value: true
+        gripper.lft_outer.lnks.2_21:
+          Value: true
+        gripper.lft_outer.lnks.2_22:
+          Value: true
+        gripper.lft_outer.lnks.2_23:
+          Value: true
+        gripper.lft_outer.lnks.2_24:
+          Value: true
+        gripper.lft_outer.lnks.2_25:
+          Value: true
+        gripper.lft_outer.lnks.2_26:
+          Value: true
+        gripper.lft_outer.lnks.2_27:
+          Value: true
+        gripper.lft_outer.lnks.2_28:
+          Value: true
+        gripper.lft_outer.lnks.2_29:
+          Value: true
+        gripper.lft_outer.lnks.2_3:
+          Value: true
+        gripper.lft_outer.lnks.2_30:
+          Value: true
+        gripper.lft_outer.lnks.2_31:
+          Value: true
+        gripper.lft_outer.lnks.2_4:
+          Value: true
+        gripper.lft_outer.lnks.2_5:
+          Value: true
+        gripper.lft_outer.lnks.2_6:
+          Value: true
+        gripper.lft_outer.lnks.2_7:
+          Value: true
+        gripper.lft_outer.lnks.2_8:
+          Value: true
+        gripper.lft_outer.lnks.2_9:
+          Value: true
+        gripper.lft_outer.lnks.3_0:
+          Value: true
+        gripper.lft_outer.lnks.3_1:
+          Value: true
+        gripper.lft_outer.lnks.3_10:
+          Value: true
+        gripper.lft_outer.lnks.3_11:
+          Value: true
+        gripper.lft_outer.lnks.3_12:
+          Value: true
+        gripper.lft_outer.lnks.3_13:
+          Value: true
+        gripper.lft_outer.lnks.3_14:
+          Value: true
+        gripper.lft_outer.lnks.3_15:
+          Value: true
+        gripper.lft_outer.lnks.3_16:
+          Value: true
+        gripper.lft_outer.lnks.3_17:
+          Value: true
+        gripper.lft_outer.lnks.3_18:
+          Value: true
+        gripper.lft_outer.lnks.3_19:
+          Value: true
+        gripper.lft_outer.lnks.3_2:
+          Value: true
+        gripper.lft_outer.lnks.3_20:
+          Value: true
+        gripper.lft_outer.lnks.3_21:
+          Value: true
+        gripper.lft_outer.lnks.3_22:
+          Value: true
+        gripper.lft_outer.lnks.3_23:
+          Value: true
+        gripper.lft_outer.lnks.3_24:
+          Value: true
+        gripper.lft_outer.lnks.3_25:
+          Value: true
+        gripper.lft_outer.lnks.3_26:
+          Value: true
+        gripper.lft_outer.lnks.3_27:
+          Value: true
+        gripper.lft_outer.lnks.3_28:
+          Value: true
+        gripper.lft_outer.lnks.3_29:
+          Value: true
+        gripper.lft_outer.lnks.3_3:
+          Value: true
+        gripper.lft_outer.lnks.3_30:
+          Value: true
+        gripper.lft_outer.lnks.3_31:
+          Value: true
+        gripper.lft_outer.lnks.3_4:
+          Value: true
+        gripper.lft_outer.lnks.3_5:
+          Value: true
+        gripper.lft_outer.lnks.3_6:
+          Value: true
+        gripper.lft_outer.lnks.3_7:
+          Value: true
+        gripper.lft_outer.lnks.3_8:
+          Value: true
+        gripper.lft_outer.lnks.3_9:
+          Value: true
+        gripper.lft_outer.lnks.4_0:
+          Value: true
+        gripper.lft_outer.lnks.4_1:
+          Value: true
+        gripper.lft_outer.lnks.4_10:
+          Value: true
+        gripper.lft_outer.lnks.4_11:
+          Value: true
+        gripper.lft_outer.lnks.4_12:
+          Value: true
+        gripper.lft_outer.lnks.4_13:
+          Value: true
+        gripper.lft_outer.lnks.4_14:
+          Value: true
+        gripper.lft_outer.lnks.4_15:
+          Value: true
+        gripper.lft_outer.lnks.4_16:
+          Value: true
+        gripper.lft_outer.lnks.4_17:
+          Value: true
+        gripper.lft_outer.lnks.4_18:
+          Value: true
+        gripper.lft_outer.lnks.4_19:
+          Value: true
+        gripper.lft_outer.lnks.4_2:
+          Value: true
+        gripper.lft_outer.lnks.4_20:
+          Value: true
+        gripper.lft_outer.lnks.4_21:
+          Value: true
+        gripper.lft_outer.lnks.4_22:
+          Value: true
+        gripper.lft_outer.lnks.4_23:
+          Value: true
+        gripper.lft_outer.lnks.4_24:
+          Value: true
+        gripper.lft_outer.lnks.4_25:
+          Value: true
+        gripper.lft_outer.lnks.4_26:
+          Value: true
+        gripper.lft_outer.lnks.4_27:
+          Value: true
+        gripper.lft_outer.lnks.4_28:
+          Value: true
+        gripper.lft_outer.lnks.4_29:
+          Value: true
+        gripper.lft_outer.lnks.4_3:
+          Value: true
+        gripper.lft_outer.lnks.4_30:
+          Value: true
+        gripper.lft_outer.lnks.4_31:
+          Value: true
+        gripper.lft_outer.lnks.4_4:
+          Value: true
+        gripper.lft_outer.lnks.4_5:
+          Value: true
+        gripper.lft_outer.lnks.4_6:
+          Value: true
+        gripper.lft_outer.lnks.4_7:
+          Value: true
+        gripper.lft_outer.lnks.4_8:
+          Value: true
+        gripper.lft_outer.lnks.4_9:
+          Value: true
+        gripper.rgt_inner.lnks.1_0:
+          Value: true
+        gripper.rgt_inner.lnks.1_1:
+          Value: true
+        gripper.rgt_inner.lnks.1_10:
+          Value: true
+        gripper.rgt_inner.lnks.1_11:
+          Value: true
+        gripper.rgt_inner.lnks.1_12:
+          Value: true
+        gripper.rgt_inner.lnks.1_13:
+          Value: true
+        gripper.rgt_inner.lnks.1_14:
+          Value: true
+        gripper.rgt_inner.lnks.1_15:
+          Value: true
+        gripper.rgt_inner.lnks.1_16:
+          Value: true
+        gripper.rgt_inner.lnks.1_17:
+          Value: true
+        gripper.rgt_inner.lnks.1_18:
+          Value: true
+        gripper.rgt_inner.lnks.1_19:
+          Value: true
+        gripper.rgt_inner.lnks.1_2:
+          Value: true
+        gripper.rgt_inner.lnks.1_20:
+          Value: true
+        gripper.rgt_inner.lnks.1_21:
+          Value: true
+        gripper.rgt_inner.lnks.1_22:
+          Value: true
+        gripper.rgt_inner.lnks.1_23:
+          Value: true
+        gripper.rgt_inner.lnks.1_24:
+          Value: true
+        gripper.rgt_inner.lnks.1_25:
+          Value: true
+        gripper.rgt_inner.lnks.1_26:
+          Value: true
+        gripper.rgt_inner.lnks.1_27:
+          Value: true
+        gripper.rgt_inner.lnks.1_28:
+          Value: true
+        gripper.rgt_inner.lnks.1_29:
+          Value: true
+        gripper.rgt_inner.lnks.1_3:
+          Value: true
+        gripper.rgt_inner.lnks.1_30:
+          Value: true
+        gripper.rgt_inner.lnks.1_31:
+          Value: true
+        gripper.rgt_inner.lnks.1_4:
+          Value: true
+        gripper.rgt_inner.lnks.1_5:
+          Value: true
+        gripper.rgt_inner.lnks.1_6:
+          Value: true
+        gripper.rgt_inner.lnks.1_7:
+          Value: true
+        gripper.rgt_inner.lnks.1_8:
+          Value: true
+        gripper.rgt_inner.lnks.1_9:
+          Value: true
+        gripper.rgt_outer.lnks.1_0:
+          Value: true
+        gripper.rgt_outer.lnks.1_1:
+          Value: true
+        gripper.rgt_outer.lnks.1_10:
+          Value: true
+        gripper.rgt_outer.lnks.1_11:
+          Value: true
+        gripper.rgt_outer.lnks.1_12:
+          Value: true
+        gripper.rgt_outer.lnks.1_13:
+          Value: true
+        gripper.rgt_outer.lnks.1_14:
+          Value: true
+        gripper.rgt_outer.lnks.1_15:
+          Value: true
+        gripper.rgt_outer.lnks.1_16:
+          Value: true
+        gripper.rgt_outer.lnks.1_17:
+          Value: true
+        gripper.rgt_outer.lnks.1_18:
+          Value: true
+        gripper.rgt_outer.lnks.1_19:
+          Value: true
+        gripper.rgt_outer.lnks.1_2:
+          Value: true
+        gripper.rgt_outer.lnks.1_20:
+          Value: true
+        gripper.rgt_outer.lnks.1_21:
+          Value: true
+        gripper.rgt_outer.lnks.1_22:
+          Value: true
+        gripper.rgt_outer.lnks.1_23:
+          Value: true
+        gripper.rgt_outer.lnks.1_24:
+          Value: true
+        gripper.rgt_outer.lnks.1_25:
+          Value: true
+        gripper.rgt_outer.lnks.1_26:
+          Value: true
+        gripper.rgt_outer.lnks.1_27:
+          Value: true
+        gripper.rgt_outer.lnks.1_28:
+          Value: true
+        gripper.rgt_outer.lnks.1_29:
+          Value: true
+        gripper.rgt_outer.lnks.1_3:
+          Value: true
+        gripper.rgt_outer.lnks.1_30:
+          Value: true
+        gripper.rgt_outer.lnks.1_31:
+          Value: true
+        gripper.rgt_outer.lnks.1_4:
+          Value: true
+        gripper.rgt_outer.lnks.1_5:
+          Value: true
+        gripper.rgt_outer.lnks.1_6:
+          Value: true
+        gripper.rgt_outer.lnks.1_7:
+          Value: true
+        gripper.rgt_outer.lnks.1_8:
+          Value: true
+        gripper.rgt_outer.lnks.1_9:
+          Value: true
+        gripper.rgt_outer.lnks.2_0:
+          Value: true
+        gripper.rgt_outer.lnks.2_1:
+          Value: true
+        gripper.rgt_outer.lnks.2_10:
+          Value: true
+        gripper.rgt_outer.lnks.2_11:
+          Value: true
+        gripper.rgt_outer.lnks.2_12:
+          Value: true
+        gripper.rgt_outer.lnks.2_13:
+          Value: true
+        gripper.rgt_outer.lnks.2_14:
+          Value: true
+        gripper.rgt_outer.lnks.2_15:
+          Value: true
+        gripper.rgt_outer.lnks.2_16:
+          Value: true
+        gripper.rgt_outer.lnks.2_17:
+          Value: true
+        gripper.rgt_outer.lnks.2_18:
+          Value: true
+        gripper.rgt_outer.lnks.2_19:
+          Value: true
+        gripper.rgt_outer.lnks.2_2:
+          Value: true
+        gripper.rgt_outer.lnks.2_20:
+          Value: true
+        gripper.rgt_outer.lnks.2_21:
+          Value: true
+        gripper.rgt_outer.lnks.2_22:
+          Value: true
+        gripper.rgt_outer.lnks.2_23:
+          Value: true
+        gripper.rgt_outer.lnks.2_24:
+          Value: true
+        gripper.rgt_outer.lnks.2_25:
+          Value: true
+        gripper.rgt_outer.lnks.2_26:
+          Value: true
+        gripper.rgt_outer.lnks.2_27:
+          Value: true
+        gripper.rgt_outer.lnks.2_28:
+          Value: true
+        gripper.rgt_outer.lnks.2_29:
+          Value: true
+        gripper.rgt_outer.lnks.2_3:
+          Value: true
+        gripper.rgt_outer.lnks.2_30:
+          Value: true
+        gripper.rgt_outer.lnks.2_31:
+          Value: true
+        gripper.rgt_outer.lnks.2_4:
+          Value: true
+        gripper.rgt_outer.lnks.2_5:
+          Value: true
+        gripper.rgt_outer.lnks.2_6:
+          Value: true
+        gripper.rgt_outer.lnks.2_7:
+          Value: true
+        gripper.rgt_outer.lnks.2_8:
+          Value: true
+        gripper.rgt_outer.lnks.2_9:
+          Value: true
+        gripper.rgt_outer.lnks.3_0:
+          Value: true
+        gripper.rgt_outer.lnks.3_1:
+          Value: true
+        gripper.rgt_outer.lnks.3_10:
+          Value: true
+        gripper.rgt_outer.lnks.3_11:
+          Value: true
+        gripper.rgt_outer.lnks.3_12:
+          Value: true
+        gripper.rgt_outer.lnks.3_13:
+          Value: true
+        gripper.rgt_outer.lnks.3_14:
+          Value: true
+        gripper.rgt_outer.lnks.3_15:
+          Value: true
+        gripper.rgt_outer.lnks.3_16:
+          Value: true
+        gripper.rgt_outer.lnks.3_17:
+          Value: true
+        gripper.rgt_outer.lnks.3_18:
+          Value: true
+        gripper.rgt_outer.lnks.3_19:
+          Value: true
+        gripper.rgt_outer.lnks.3_2:
+          Value: true
+        gripper.rgt_outer.lnks.3_20:
+          Value: true
+        gripper.rgt_outer.lnks.3_21:
+          Value: true
+        gripper.rgt_outer.lnks.3_22:
+          Value: true
+        gripper.rgt_outer.lnks.3_23:
+          Value: true
+        gripper.rgt_outer.lnks.3_24:
+          Value: true
+        gripper.rgt_outer.lnks.3_25:
+          Value: true
+        gripper.rgt_outer.lnks.3_26:
+          Value: true
+        gripper.rgt_outer.lnks.3_27:
+          Value: true
+        gripper.rgt_outer.lnks.3_28:
+          Value: true
+        gripper.rgt_outer.lnks.3_29:
+          Value: true
+        gripper.rgt_outer.lnks.3_3:
+          Value: true
+        gripper.rgt_outer.lnks.3_30:
+          Value: true
+        gripper.rgt_outer.lnks.3_31:
+          Value: true
+        gripper.rgt_outer.lnks.3_4:
+          Value: true
+        gripper.rgt_outer.lnks.3_5:
+          Value: true
+        gripper.rgt_outer.lnks.3_6:
+          Value: true
+        gripper.rgt_outer.lnks.3_7:
+          Value: true
+        gripper.rgt_outer.lnks.3_8:
+          Value: true
+        gripper.rgt_outer.lnks.3_9:
+          Value: true
+        gripper.rgt_outer.lnks.4_0:
+          Value: true
+        gripper.rgt_outer.lnks.4_1:
+          Value: true
+        gripper.rgt_outer.lnks.4_10:
+          Value: true
+        gripper.rgt_outer.lnks.4_11:
+          Value: true
+        gripper.rgt_outer.lnks.4_12:
+          Value: true
+        gripper.rgt_outer.lnks.4_13:
+          Value: true
+        gripper.rgt_outer.lnks.4_14:
+          Value: true
+        gripper.rgt_outer.lnks.4_15:
+          Value: true
+        gripper.rgt_outer.lnks.4_16:
+          Value: true
+        gripper.rgt_outer.lnks.4_17:
+          Value: true
+        gripper.rgt_outer.lnks.4_18:
+          Value: true
+        gripper.rgt_outer.lnks.4_19:
+          Value: true
+        gripper.rgt_outer.lnks.4_2:
+          Value: true
+        gripper.rgt_outer.lnks.4_20:
+          Value: true
+        gripper.rgt_outer.lnks.4_21:
+          Value: true
+        gripper.rgt_outer.lnks.4_22:
+          Value: true
+        gripper.rgt_outer.lnks.4_23:
+          Value: true
+        gripper.rgt_outer.lnks.4_24:
+          Value: true
+        gripper.rgt_outer.lnks.4_25:
+          Value: true
+        gripper.rgt_outer.lnks.4_26:
+          Value: true
+        gripper.rgt_outer.lnks.4_27:
+          Value: true
+        gripper.rgt_outer.lnks.4_28:
+          Value: true
+        gripper.rgt_outer.lnks.4_29:
+          Value: true
+        gripper.rgt_outer.lnks.4_3:
+          Value: true
+        gripper.rgt_outer.lnks.4_30:
+          Value: true
+        gripper.rgt_outer.lnks.4_31:
+          Value: true
+        gripper.rgt_outer.lnks.4_4:
+          Value: true
+        gripper.rgt_outer.lnks.4_5:
+          Value: true
+        gripper.rgt_outer.lnks.4_6:
+          Value: true
+        gripper.rgt_outer.lnks.4_7:
+          Value: true
+        gripper.rgt_outer.lnks.4_8:
+          Value: true
+        gripper.rgt_outer.lnks.4_9:
           Value: true
         object:
           Value: true
@@ -78,7 +1135,710 @@ Visualization Manager:
           base_link:
             {}
           object:
-            {}
+            body_0:
+              {}
+            body_1:
+              {}
+            body_10:
+              {}
+            body_11:
+              {}
+            body_12:
+              {}
+            body_13:
+              {}
+            body_14:
+              {}
+            body_15:
+              {}
+            body_16:
+              {}
+            body_17:
+              {}
+            body_18:
+              {}
+            body_19:
+              {}
+            body_2:
+              {}
+            body_20:
+              {}
+            body_21:
+              {}
+            body_22:
+              {}
+            body_23:
+              {}
+            body_24:
+              {}
+            body_25:
+              {}
+            body_26:
+              {}
+            body_27:
+              {}
+            body_28:
+              {}
+            body_29:
+              {}
+            body_3:
+              {}
+            body_30:
+              {}
+            body_31:
+              {}
+            body_4:
+              {}
+            body_5:
+              {}
+            body_6:
+              {}
+            body_7:
+              {}
+            body_8:
+              {}
+            body_9:
+              {}
+            gripper.lft_inner.lnks.1_0:
+              {}
+            gripper.lft_inner.lnks.1_1:
+              {}
+            gripper.lft_inner.lnks.1_10:
+              {}
+            gripper.lft_inner.lnks.1_11:
+              {}
+            gripper.lft_inner.lnks.1_12:
+              {}
+            gripper.lft_inner.lnks.1_13:
+              {}
+            gripper.lft_inner.lnks.1_14:
+              {}
+            gripper.lft_inner.lnks.1_15:
+              {}
+            gripper.lft_inner.lnks.1_16:
+              {}
+            gripper.lft_inner.lnks.1_17:
+              {}
+            gripper.lft_inner.lnks.1_18:
+              {}
+            gripper.lft_inner.lnks.1_19:
+              {}
+            gripper.lft_inner.lnks.1_2:
+              {}
+            gripper.lft_inner.lnks.1_20:
+              {}
+            gripper.lft_inner.lnks.1_21:
+              {}
+            gripper.lft_inner.lnks.1_22:
+              {}
+            gripper.lft_inner.lnks.1_23:
+              {}
+            gripper.lft_inner.lnks.1_24:
+              {}
+            gripper.lft_inner.lnks.1_25:
+              {}
+            gripper.lft_inner.lnks.1_26:
+              {}
+            gripper.lft_inner.lnks.1_27:
+              {}
+            gripper.lft_inner.lnks.1_28:
+              {}
+            gripper.lft_inner.lnks.1_29:
+              {}
+            gripper.lft_inner.lnks.1_3:
+              {}
+            gripper.lft_inner.lnks.1_30:
+              {}
+            gripper.lft_inner.lnks.1_31:
+              {}
+            gripper.lft_inner.lnks.1_4:
+              {}
+            gripper.lft_inner.lnks.1_5:
+              {}
+            gripper.lft_inner.lnks.1_6:
+              {}
+            gripper.lft_inner.lnks.1_7:
+              {}
+            gripper.lft_inner.lnks.1_8:
+              {}
+            gripper.lft_inner.lnks.1_9:
+              {}
+            gripper.lft_outer.lnks.1_0:
+              {}
+            gripper.lft_outer.lnks.1_1:
+              {}
+            gripper.lft_outer.lnks.1_10:
+              {}
+            gripper.lft_outer.lnks.1_11:
+              {}
+            gripper.lft_outer.lnks.1_12:
+              {}
+            gripper.lft_outer.lnks.1_13:
+              {}
+            gripper.lft_outer.lnks.1_14:
+              {}
+            gripper.lft_outer.lnks.1_15:
+              {}
+            gripper.lft_outer.lnks.1_16:
+              {}
+            gripper.lft_outer.lnks.1_17:
+              {}
+            gripper.lft_outer.lnks.1_18:
+              {}
+            gripper.lft_outer.lnks.1_19:
+              {}
+            gripper.lft_outer.lnks.1_2:
+              {}
+            gripper.lft_outer.lnks.1_20:
+              {}
+            gripper.lft_outer.lnks.1_21:
+              {}
+            gripper.lft_outer.lnks.1_22:
+              {}
+            gripper.lft_outer.lnks.1_23:
+              {}
+            gripper.lft_outer.lnks.1_24:
+              {}
+            gripper.lft_outer.lnks.1_25:
+              {}
+            gripper.lft_outer.lnks.1_26:
+              {}
+            gripper.lft_outer.lnks.1_27:
+              {}
+            gripper.lft_outer.lnks.1_28:
+              {}
+            gripper.lft_outer.lnks.1_29:
+              {}
+            gripper.lft_outer.lnks.1_3:
+              {}
+            gripper.lft_outer.lnks.1_30:
+              {}
+            gripper.lft_outer.lnks.1_31:
+              {}
+            gripper.lft_outer.lnks.1_4:
+              {}
+            gripper.lft_outer.lnks.1_5:
+              {}
+            gripper.lft_outer.lnks.1_6:
+              {}
+            gripper.lft_outer.lnks.1_7:
+              {}
+            gripper.lft_outer.lnks.1_8:
+              {}
+            gripper.lft_outer.lnks.1_9:
+              {}
+            gripper.lft_outer.lnks.2_0:
+              {}
+            gripper.lft_outer.lnks.2_1:
+              {}
+            gripper.lft_outer.lnks.2_10:
+              {}
+            gripper.lft_outer.lnks.2_11:
+              {}
+            gripper.lft_outer.lnks.2_12:
+              {}
+            gripper.lft_outer.lnks.2_13:
+              {}
+            gripper.lft_outer.lnks.2_14:
+              {}
+            gripper.lft_outer.lnks.2_15:
+              {}
+            gripper.lft_outer.lnks.2_16:
+              {}
+            gripper.lft_outer.lnks.2_17:
+              {}
+            gripper.lft_outer.lnks.2_18:
+              {}
+            gripper.lft_outer.lnks.2_19:
+              {}
+            gripper.lft_outer.lnks.2_2:
+              {}
+            gripper.lft_outer.lnks.2_20:
+              {}
+            gripper.lft_outer.lnks.2_21:
+              {}
+            gripper.lft_outer.lnks.2_22:
+              {}
+            gripper.lft_outer.lnks.2_23:
+              {}
+            gripper.lft_outer.lnks.2_24:
+              {}
+            gripper.lft_outer.lnks.2_25:
+              {}
+            gripper.lft_outer.lnks.2_26:
+              {}
+            gripper.lft_outer.lnks.2_27:
+              {}
+            gripper.lft_outer.lnks.2_28:
+              {}
+            gripper.lft_outer.lnks.2_29:
+              {}
+            gripper.lft_outer.lnks.2_3:
+              {}
+            gripper.lft_outer.lnks.2_30:
+              {}
+            gripper.lft_outer.lnks.2_31:
+              {}
+            gripper.lft_outer.lnks.2_4:
+              {}
+            gripper.lft_outer.lnks.2_5:
+              {}
+            gripper.lft_outer.lnks.2_6:
+              {}
+            gripper.lft_outer.lnks.2_7:
+              {}
+            gripper.lft_outer.lnks.2_8:
+              {}
+            gripper.lft_outer.lnks.2_9:
+              {}
+            gripper.lft_outer.lnks.3_0:
+              {}
+            gripper.lft_outer.lnks.3_1:
+              {}
+            gripper.lft_outer.lnks.3_10:
+              {}
+            gripper.lft_outer.lnks.3_11:
+              {}
+            gripper.lft_outer.lnks.3_12:
+              {}
+            gripper.lft_outer.lnks.3_13:
+              {}
+            gripper.lft_outer.lnks.3_14:
+              {}
+            gripper.lft_outer.lnks.3_15:
+              {}
+            gripper.lft_outer.lnks.3_16:
+              {}
+            gripper.lft_outer.lnks.3_17:
+              {}
+            gripper.lft_outer.lnks.3_18:
+              {}
+            gripper.lft_outer.lnks.3_19:
+              {}
+            gripper.lft_outer.lnks.3_2:
+              {}
+            gripper.lft_outer.lnks.3_20:
+              {}
+            gripper.lft_outer.lnks.3_21:
+              {}
+            gripper.lft_outer.lnks.3_22:
+              {}
+            gripper.lft_outer.lnks.3_23:
+              {}
+            gripper.lft_outer.lnks.3_24:
+              {}
+            gripper.lft_outer.lnks.3_25:
+              {}
+            gripper.lft_outer.lnks.3_26:
+              {}
+            gripper.lft_outer.lnks.3_27:
+              {}
+            gripper.lft_outer.lnks.3_28:
+              {}
+            gripper.lft_outer.lnks.3_29:
+              {}
+            gripper.lft_outer.lnks.3_3:
+              {}
+            gripper.lft_outer.lnks.3_30:
+              {}
+            gripper.lft_outer.lnks.3_31:
+              {}
+            gripper.lft_outer.lnks.3_4:
+              {}
+            gripper.lft_outer.lnks.3_5:
+              {}
+            gripper.lft_outer.lnks.3_6:
+              {}
+            gripper.lft_outer.lnks.3_7:
+              {}
+            gripper.lft_outer.lnks.3_8:
+              {}
+            gripper.lft_outer.lnks.3_9:
+              {}
+            gripper.lft_outer.lnks.4_0:
+              {}
+            gripper.lft_outer.lnks.4_1:
+              {}
+            gripper.lft_outer.lnks.4_10:
+              {}
+            gripper.lft_outer.lnks.4_11:
+              {}
+            gripper.lft_outer.lnks.4_12:
+              {}
+            gripper.lft_outer.lnks.4_13:
+              {}
+            gripper.lft_outer.lnks.4_14:
+              {}
+            gripper.lft_outer.lnks.4_15:
+              {}
+            gripper.lft_outer.lnks.4_16:
+              {}
+            gripper.lft_outer.lnks.4_17:
+              {}
+            gripper.lft_outer.lnks.4_18:
+              {}
+            gripper.lft_outer.lnks.4_19:
+              {}
+            gripper.lft_outer.lnks.4_2:
+              {}
+            gripper.lft_outer.lnks.4_20:
+              {}
+            gripper.lft_outer.lnks.4_21:
+              {}
+            gripper.lft_outer.lnks.4_22:
+              {}
+            gripper.lft_outer.lnks.4_23:
+              {}
+            gripper.lft_outer.lnks.4_24:
+              {}
+            gripper.lft_outer.lnks.4_25:
+              {}
+            gripper.lft_outer.lnks.4_26:
+              {}
+            gripper.lft_outer.lnks.4_27:
+              {}
+            gripper.lft_outer.lnks.4_28:
+              {}
+            gripper.lft_outer.lnks.4_29:
+              {}
+            gripper.lft_outer.lnks.4_3:
+              {}
+            gripper.lft_outer.lnks.4_30:
+              {}
+            gripper.lft_outer.lnks.4_31:
+              {}
+            gripper.lft_outer.lnks.4_4:
+              {}
+            gripper.lft_outer.lnks.4_5:
+              {}
+            gripper.lft_outer.lnks.4_6:
+              {}
+            gripper.lft_outer.lnks.4_7:
+              {}
+            gripper.lft_outer.lnks.4_8:
+              {}
+            gripper.lft_outer.lnks.4_9:
+              {}
+            gripper.rgt_inner.lnks.1_0:
+              {}
+            gripper.rgt_inner.lnks.1_1:
+              {}
+            gripper.rgt_inner.lnks.1_10:
+              {}
+            gripper.rgt_inner.lnks.1_11:
+              {}
+            gripper.rgt_inner.lnks.1_12:
+              {}
+            gripper.rgt_inner.lnks.1_13:
+              {}
+            gripper.rgt_inner.lnks.1_14:
+              {}
+            gripper.rgt_inner.lnks.1_15:
+              {}
+            gripper.rgt_inner.lnks.1_16:
+              {}
+            gripper.rgt_inner.lnks.1_17:
+              {}
+            gripper.rgt_inner.lnks.1_18:
+              {}
+            gripper.rgt_inner.lnks.1_19:
+              {}
+            gripper.rgt_inner.lnks.1_2:
+              {}
+            gripper.rgt_inner.lnks.1_20:
+              {}
+            gripper.rgt_inner.lnks.1_21:
+              {}
+            gripper.rgt_inner.lnks.1_22:
+              {}
+            gripper.rgt_inner.lnks.1_23:
+              {}
+            gripper.rgt_inner.lnks.1_24:
+              {}
+            gripper.rgt_inner.lnks.1_25:
+              {}
+            gripper.rgt_inner.lnks.1_26:
+              {}
+            gripper.rgt_inner.lnks.1_27:
+              {}
+            gripper.rgt_inner.lnks.1_28:
+              {}
+            gripper.rgt_inner.lnks.1_29:
+              {}
+            gripper.rgt_inner.lnks.1_3:
+              {}
+            gripper.rgt_inner.lnks.1_30:
+              {}
+            gripper.rgt_inner.lnks.1_31:
+              {}
+            gripper.rgt_inner.lnks.1_4:
+              {}
+            gripper.rgt_inner.lnks.1_5:
+              {}
+            gripper.rgt_inner.lnks.1_6:
+              {}
+            gripper.rgt_inner.lnks.1_7:
+              {}
+            gripper.rgt_inner.lnks.1_8:
+              {}
+            gripper.rgt_inner.lnks.1_9:
+              {}
+            gripper.rgt_outer.lnks.1_0:
+              {}
+            gripper.rgt_outer.lnks.1_1:
+              {}
+            gripper.rgt_outer.lnks.1_10:
+              {}
+            gripper.rgt_outer.lnks.1_11:
+              {}
+            gripper.rgt_outer.lnks.1_12:
+              {}
+            gripper.rgt_outer.lnks.1_13:
+              {}
+            gripper.rgt_outer.lnks.1_14:
+              {}
+            gripper.rgt_outer.lnks.1_15:
+              {}
+            gripper.rgt_outer.lnks.1_16:
+              {}
+            gripper.rgt_outer.lnks.1_17:
+              {}
+            gripper.rgt_outer.lnks.1_18:
+              {}
+            gripper.rgt_outer.lnks.1_19:
+              {}
+            gripper.rgt_outer.lnks.1_2:
+              {}
+            gripper.rgt_outer.lnks.1_20:
+              {}
+            gripper.rgt_outer.lnks.1_21:
+              {}
+            gripper.rgt_outer.lnks.1_22:
+              {}
+            gripper.rgt_outer.lnks.1_23:
+              {}
+            gripper.rgt_outer.lnks.1_24:
+              {}
+            gripper.rgt_outer.lnks.1_25:
+              {}
+            gripper.rgt_outer.lnks.1_26:
+              {}
+            gripper.rgt_outer.lnks.1_27:
+              {}
+            gripper.rgt_outer.lnks.1_28:
+              {}
+            gripper.rgt_outer.lnks.1_29:
+              {}
+            gripper.rgt_outer.lnks.1_3:
+              {}
+            gripper.rgt_outer.lnks.1_30:
+              {}
+            gripper.rgt_outer.lnks.1_31:
+              {}
+            gripper.rgt_outer.lnks.1_4:
+              {}
+            gripper.rgt_outer.lnks.1_5:
+              {}
+            gripper.rgt_outer.lnks.1_6:
+              {}
+            gripper.rgt_outer.lnks.1_7:
+              {}
+            gripper.rgt_outer.lnks.1_8:
+              {}
+            gripper.rgt_outer.lnks.1_9:
+              {}
+            gripper.rgt_outer.lnks.2_0:
+              {}
+            gripper.rgt_outer.lnks.2_1:
+              {}
+            gripper.rgt_outer.lnks.2_10:
+              {}
+            gripper.rgt_outer.lnks.2_11:
+              {}
+            gripper.rgt_outer.lnks.2_12:
+              {}
+            gripper.rgt_outer.lnks.2_13:
+              {}
+            gripper.rgt_outer.lnks.2_14:
+              {}
+            gripper.rgt_outer.lnks.2_15:
+              {}
+            gripper.rgt_outer.lnks.2_16:
+              {}
+            gripper.rgt_outer.lnks.2_17:
+              {}
+            gripper.rgt_outer.lnks.2_18:
+              {}
+            gripper.rgt_outer.lnks.2_19:
+              {}
+            gripper.rgt_outer.lnks.2_2:
+              {}
+            gripper.rgt_outer.lnks.2_20:
+              {}
+            gripper.rgt_outer.lnks.2_21:
+              {}
+            gripper.rgt_outer.lnks.2_22:
+              {}
+            gripper.rgt_outer.lnks.2_23:
+              {}
+            gripper.rgt_outer.lnks.2_24:
+              {}
+            gripper.rgt_outer.lnks.2_25:
+              {}
+            gripper.rgt_outer.lnks.2_26:
+              {}
+            gripper.rgt_outer.lnks.2_27:
+              {}
+            gripper.rgt_outer.lnks.2_28:
+              {}
+            gripper.rgt_outer.lnks.2_29:
+              {}
+            gripper.rgt_outer.lnks.2_3:
+              {}
+            gripper.rgt_outer.lnks.2_30:
+              {}
+            gripper.rgt_outer.lnks.2_31:
+              {}
+            gripper.rgt_outer.lnks.2_4:
+              {}
+            gripper.rgt_outer.lnks.2_5:
+              {}
+            gripper.rgt_outer.lnks.2_6:
+              {}
+            gripper.rgt_outer.lnks.2_7:
+              {}
+            gripper.rgt_outer.lnks.2_8:
+              {}
+            gripper.rgt_outer.lnks.2_9:
+              {}
+            gripper.rgt_outer.lnks.3_0:
+              {}
+            gripper.rgt_outer.lnks.3_1:
+              {}
+            gripper.rgt_outer.lnks.3_10:
+              {}
+            gripper.rgt_outer.lnks.3_11:
+              {}
+            gripper.rgt_outer.lnks.3_12:
+              {}
+            gripper.rgt_outer.lnks.3_13:
+              {}
+            gripper.rgt_outer.lnks.3_14:
+              {}
+            gripper.rgt_outer.lnks.3_15:
+              {}
+            gripper.rgt_outer.lnks.3_16:
+              {}
+            gripper.rgt_outer.lnks.3_17:
+              {}
+            gripper.rgt_outer.lnks.3_18:
+              {}
+            gripper.rgt_outer.lnks.3_19:
+              {}
+            gripper.rgt_outer.lnks.3_2:
+              {}
+            gripper.rgt_outer.lnks.3_20:
+              {}
+            gripper.rgt_outer.lnks.3_21:
+              {}
+            gripper.rgt_outer.lnks.3_22:
+              {}
+            gripper.rgt_outer.lnks.3_23:
+              {}
+            gripper.rgt_outer.lnks.3_24:
+              {}
+            gripper.rgt_outer.lnks.3_25:
+              {}
+            gripper.rgt_outer.lnks.3_26:
+              {}
+            gripper.rgt_outer.lnks.3_27:
+              {}
+            gripper.rgt_outer.lnks.3_28:
+              {}
+            gripper.rgt_outer.lnks.3_29:
+              {}
+            gripper.rgt_outer.lnks.3_3:
+              {}
+            gripper.rgt_outer.lnks.3_30:
+              {}
+            gripper.rgt_outer.lnks.3_31:
+              {}
+            gripper.rgt_outer.lnks.3_4:
+              {}
+            gripper.rgt_outer.lnks.3_5:
+              {}
+            gripper.rgt_outer.lnks.3_6:
+              {}
+            gripper.rgt_outer.lnks.3_7:
+              {}
+            gripper.rgt_outer.lnks.3_8:
+              {}
+            gripper.rgt_outer.lnks.3_9:
+              {}
+            gripper.rgt_outer.lnks.4_0:
+              {}
+            gripper.rgt_outer.lnks.4_1:
+              {}
+            gripper.rgt_outer.lnks.4_10:
+              {}
+            gripper.rgt_outer.lnks.4_11:
+              {}
+            gripper.rgt_outer.lnks.4_12:
+              {}
+            gripper.rgt_outer.lnks.4_13:
+              {}
+            gripper.rgt_outer.lnks.4_14:
+              {}
+            gripper.rgt_outer.lnks.4_15:
+              {}
+            gripper.rgt_outer.lnks.4_16:
+              {}
+            gripper.rgt_outer.lnks.4_17:
+              {}
+            gripper.rgt_outer.lnks.4_18:
+              {}
+            gripper.rgt_outer.lnks.4_19:
+              {}
+            gripper.rgt_outer.lnks.4_2:
+              {}
+            gripper.rgt_outer.lnks.4_20:
+              {}
+            gripper.rgt_outer.lnks.4_21:
+              {}
+            gripper.rgt_outer.lnks.4_22:
+              {}
+            gripper.rgt_outer.lnks.4_23:
+              {}
+            gripper.rgt_outer.lnks.4_24:
+              {}
+            gripper.rgt_outer.lnks.4_25:
+              {}
+            gripper.rgt_outer.lnks.4_26:
+              {}
+            gripper.rgt_outer.lnks.4_27:
+              {}
+            gripper.rgt_outer.lnks.4_28:
+              {}
+            gripper.rgt_outer.lnks.4_29:
+              {}
+            gripper.rgt_outer.lnks.4_3:
+              {}
+            gripper.rgt_outer.lnks.4_30:
+              {}
+            gripper.rgt_outer.lnks.4_31:
+              {}
+            gripper.rgt_outer.lnks.4_4:
+              {}
+            gripper.rgt_outer.lnks.4_5:
+              {}
+            gripper.rgt_outer.lnks.4_6:
+              {}
+            gripper.rgt_outer.lnks.4_7:
+              {}
+            gripper.rgt_outer.lnks.4_8:
+              {}
+            gripper.rgt_outer.lnks.4_9:
+              {}
       Update Interval: 0
       Value: true
   Enabled: true
@@ -150,10 +1910,10 @@ Visualization Manager:
 Window Geometry:
   Displays:
     collapsed: true
-  Height: 1016
+  Height: 949
   Hide Left Dock: true
   Hide Right Dock: true
-  QMainWindow State: 000000ff00000000fd0000000400000000000001560000035efc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073000000003b0000035e000000c700fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f0000035efc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003b0000035e000000a000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000039b0000003efc0100000002fb0000000800540069006d006501000000000000039b0000025300fffffffb0000000800540069006d006501000000000000045000000000000000000000039b0000035e00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000400000000000001560000035efc0200000008fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073000000003b0000035e000000c700fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261000000010000010f0000035efc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003b0000035e000000a000fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000039b0000003efc0100000002fb0000000800540069006d006501000000000000039b0000025300fffffffb0000000800540069006d006501000000000000045000000000000000000000039b0000031b00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -163,5 +1923,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 923
-  X: -188
+  X: 37
   Y: 27

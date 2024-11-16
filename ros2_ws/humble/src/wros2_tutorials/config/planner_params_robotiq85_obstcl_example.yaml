@@ -2,7 +2,7 @@ grasp_planning_server:
     ros__parameters:
         object_mesh_path: '/ros2_ws/src/wros2_tutorials/meshes/bunnysim.stl'
         obstcl_mesh_path: '/ros2_ws/src/wros2_tutorials/meshes/table.stl'
-        vis_failures: False
+        vis_failures: True
         save_results: False
         gripper_name: 'robotiq85'
         antipodal_grasp:
